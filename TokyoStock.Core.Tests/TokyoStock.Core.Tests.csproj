@@ -17,6 +17,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\TokyoStock.Core.Data\TokyoStock.Core.Data.csproj" />
+    <ProjectReference Include="..\TokyoStock.Core.Entities\TokyoStock.Core.Entities.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Using Include="Xunit" />
   </ItemGroup>
 
