@@ -6,13 +6,13 @@ using TokyoStock.Core.Entities;
 
 namespace TokyoStock.Core.Data;
 
-public partial class DbTpintegradorContext : DbContext
+public partial class TokyoStockContext : DbContext
 {
-    public DbTpintegradorContext()
+    public TokyoStockContext()
     {
     }
 
-    public DbTpintegradorContext(DbContextOptions<DbTpintegradorContext> options)
+    public TokyoStockContext(DbContextOptions<TokyoStockContext> options)
         : base(options)
     {
     }
