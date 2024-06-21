@@ -3,17 +3,21 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.34928.147
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TokyoStock.Core.Entities", "TokyoStock.Core.Entities\TokyoStock.Core.Entities.csproj", "{63759BCE-810C-4592-A861-64593EDEAD21}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TokyoStock.Core.Entities", "TokyoStock.Core.Entities\TokyoStock.Core.Entities.csproj", "{63759BCE-810C-4592-A861-64593EDEAD21}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TokyoStock.Core.Data", "TokyoStock.Core.Data\TokyoStock.Core.Data.csproj", "{E7DE357A-7692-47A1-9A70-64D0A2FCF28B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TokyoStock.Core.Data", "TokyoStock.Core.Data\TokyoStock.Core.Data.csproj", "{E7DE357A-7692-47A1-9A70-64D0A2FCF28B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TokyoStock.Core.Business", "TokyoStock.Core.Business\TokyoStock.Core.Business.csproj", "{F56BBD03-0C9F-4127-8F33-E3A3A2F3DD82}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TokyoStock.Core.Business", "TokyoStock.Core.Business\TokyoStock.Core.Business.csproj", "{F56BBD03-0C9F-4127-8F33-E3A3A2F3DD82}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TokyoStock.Api", "TokyoStock.Api\TokyoStock.Api.csproj", "{B1967AA2-C132-4F22-AFA8-FDDD0CC621A4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TokyoStock.Api", "TokyoStock.Api\TokyoStock.Api.csproj", "{B1967AA2-C132-4F22-AFA8-FDDD0CC621A4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TokyoStock.App", "TokyoStock.App\TokyoStock.App.csproj", "{50778ACF-603A-4242-86D9-F0C79E37C5B0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TokyoStock.App", "TokyoStock.App\TokyoStock.App.csproj", "{50778ACF-603A-4242-86D9-F0C79E37C5B0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TokyoStock.WebApp", "TokyoStock.WebApp\TokyoStock.WebApp.csproj", "{79692743-7244-499B-A29D-F169A062BD0A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TokyoStock.WebApp", "TokyoStock.WebApp\TokyoStock.WebApp.csproj", "{79692743-7244-499B-A29D-F169A062BD0A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TokyoStock.Core.Tests", "TokyoStock.Core.Tests\TokyoStock.Core.Tests.csproj", "{BA9D7746-5604-48EB-9A26-98AF14343186}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{9EFA62CF-8616-41C4-8285-D8346333382D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,9 +49,19 @@ Global
 		{79692743-7244-499B-A29D-F169A062BD0A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{79692743-7244-499B-A29D-F169A062BD0A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{79692743-7244-499B-A29D-F169A062BD0A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA9D7746-5604-48EB-9A26-98AF14343186}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA9D7746-5604-48EB-9A26-98AF14343186}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA9D7746-5604-48EB-9A26-98AF14343186}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA9D7746-5604-48EB-9A26-98AF14343186}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{63759BCE-810C-4592-A861-64593EDEAD21} = {9EFA62CF-8616-41C4-8285-D8346333382D}
+		{E7DE357A-7692-47A1-9A70-64D0A2FCF28B} = {9EFA62CF-8616-41C4-8285-D8346333382D}
+		{F56BBD03-0C9F-4127-8F33-E3A3A2F3DD82} = {9EFA62CF-8616-41C4-8285-D8346333382D}
+		{BA9D7746-5604-48EB-9A26-98AF14343186} = {9EFA62CF-8616-41C4-8285-D8346333382D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5A7A6B03-000E-4222-8A9D-C5EB35F92C54}
