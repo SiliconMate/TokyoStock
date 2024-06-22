@@ -36,20 +36,20 @@
             textBox2 = new TextBox();
             textBox1 = new TextBox();
             label1 = new Label();
+            pictureBox1 = new PictureBox();
             panel3 = new Panel();
             button2 = new Button();
             textBox3 = new TextBox();
             textBox4 = new TextBox();
             label2 = new Label();
-            pictureBox1 = new PictureBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
             splitContainer1.SuspendLayout();
             panel2.SuspendLayout();
-            panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            panel3.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
@@ -135,6 +135,16 @@
             label1.TabIndex = 0;
             label1.Text = "Accede con tu cuenta";
             // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(149, 234);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(76, 65);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 1;
+            pictureBox1.TabStop = false;
+            // 
             // panel3
             // 
             panel3.BackColor = SystemColors.ControlLight;
@@ -191,16 +201,6 @@
             label2.TabIndex = 0;
             label2.Text = "¿Eres usuario nuevo?";
             // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(149, 234);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(76, 65);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 1;
-            pictureBox1.TabStop = false;
-            // 
             // InitForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -209,6 +209,7 @@
             ClientSize = new Size(484, 326);
             Controls.Add(panel1);
             Name = "InitForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "InitForm";
             panel1.ResumeLayout(false);
             splitContainer1.Panel1.ResumeLayout(false);
@@ -217,9 +218,9 @@
             splitContainer1.ResumeLayout(false);
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 

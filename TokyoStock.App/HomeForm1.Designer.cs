@@ -36,10 +36,17 @@
             btLista = new Button();
             btVentas = new Button();
             pictureBox1 = new PictureBox();
+            label1 = new Label();
+            button1 = new Button();
+            comboBox1 = new ComboBox();
+            textBox1 = new TextBox();
+            dataGridView1 = new DataGridView();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
+            splitContainer1.Panel2.SuspendLayout();
             splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // splitContainer1
@@ -61,7 +68,13 @@
             // 
             // splitContainer1.Panel2
             // 
-            splitContainer1.Panel2.BackColor = SystemColors.AppWorkspace;
+            splitContainer1.Panel2.BackColor = Color.LightSkyBlue;
+            splitContainer1.Panel2.Controls.Add(label1);
+            splitContainer1.Panel2.Controls.Add(button1);
+            splitContainer1.Panel2.Controls.Add(comboBox1);
+            splitContainer1.Panel2.Controls.Add(textBox1);
+            splitContainer1.Panel2.Controls.Add(dataGridView1);
+            splitContainer1.Panel2.Paint += splitContainer1_Panel2_Paint;
             splitContainer1.Size = new Size(800, 450);
             splitContainer1.SplitterDistance = 162;
             splitContainer1.TabIndex = 0;
@@ -108,6 +121,7 @@
             btAdministracion.TabIndex = 2;
             btAdministracion.Text = "Administracion";
             btAdministracion.UseVisualStyleBackColor = false;
+            btAdministracion.Click += btAdministracion_Click;
             // 
             // btLista
             // 
@@ -144,18 +158,69 @@
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
-            // Form1
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.BackColor = SystemColors.Control;
+            label1.Font = new Font("Segoe UI", 27.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = SystemColors.ActiveCaptionText;
+            label1.Location = new Point(222, 30);
+            label1.Name = "label1";
+            label1.Size = new Size(199, 50);
+            label1.TabIndex = 4;
+            label1.Text = "Productos";
+            // 
+            // button1
+            // 
+            button1.Location = new Point(537, 103);
+            button1.Name = "button1";
+            button1.Size = new Size(75, 23);
+            button1.TabIndex = 3;
+            button1.Text = "Buscar";
+            button1.UseVisualStyleBackColor = true;
+            // 
+            // comboBox1
+            // 
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new Point(416, 103);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(115, 23);
+            comboBox1.TabIndex = 2;
+            comboBox1.Text = "Categoria";
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(301, 103);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(109, 23);
+            textBox1.TabIndex = 1;
+            textBox1.Text = "Nombre";
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.BackgroundColor = SystemColors.GradientInactiveCaption;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(14, 141);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.Size = new Size(598, 297);
+            dataGridView1.TabIndex = 0;
+            // 
+            // HomeForm1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
             Controls.Add(splitContainer1);
-            Name = "Form1";
+            Name = "HomeForm1";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
             splitContainer1.Panel1.ResumeLayout(false);
+            splitContainer1.Panel2.ResumeLayout(false);
+            splitContainer1.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).EndInit();
             splitContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
         }
 
@@ -168,5 +233,10 @@
         private Button btLista;
         private Button btSalir;
         private Button btIniciar;
+        private DataGridView dataGridView1;
+        private Button button1;
+        private ComboBox comboBox1;
+        private TextBox textBox1;
+        private Label label1;
     }
 }

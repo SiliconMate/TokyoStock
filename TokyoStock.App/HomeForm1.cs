@@ -22,5 +22,16 @@ namespace TokyoStock.App
             var initForm = new InitForm();
             initForm.Show();
         }
+
+        private void splitContainer1_Panel2_Paint(object sender, PaintEventArgs e)
+        {
+            label1.BackColor = Color.Transparent;
+        }
+
+        private void btAdministracion_Click(object sender, EventArgs e)
+        {
+            var adminForm = new AdministracionForm();
+            adminForm.Show();
+        }
     }
 }
