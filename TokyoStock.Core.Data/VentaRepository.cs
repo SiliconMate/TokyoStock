@@ -22,5 +22,13 @@ namespace TokyoStock.Core.Data
             return ventas;
         }
 
+        public void AddVenta(Venta v)
+        {
+            using (var db = new TokyoStockContext())
+            {
+                db.Venta.Add(v);
+                db.SaveChanges();
+            }
+        }
     }
 }
