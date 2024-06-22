@@ -1,4 +1,5 @@
 ﻿
+using Microsoft.EntityFrameworkCore;
 using TokyoStock.Core.Entities;
 using TokyoStock.Core.Entities.Filters;
 
@@ -23,19 +24,21 @@ namespace TokyoStock.Core.Data
             return list;
         }
 
-        public List<Compra> GetComprasByFilter(Filter filter)
+        public (List<Producto> productos, int totalP) GetComprasByFilter(Filter f)
         {
-            var list = new List<Compra>();
+            var totalP = 0;
+            var productos = new List<Producto>();
 
             using (var db = new TokyoStockContext())
             {
-                list = db.Compras
-                    .Skip((filter.PageIndex - 1) * filter.PageSize)
-                    .Take(filter.PageSize)
+                totalP = db.Productos.Count();
+                productos = db.Productos.Include(p => p.Categoria)
+                    .Skip((f.PageIndex - 1) * f.PageSize)
+                    .Take(f.PageSize)
                     .ToList();
             }
 
-            return list;
+            return (productos, totalP);
         }
 
         public void AddCompra(Compra c)
