@@ -37,5 +37,19 @@ namespace TokyoStock.Core.Business
 
             _ur.AddUsuario(usuario);
         }
+
+        public bool ValidarUsuario(string nomb, string pass)
+        {
+            var user = _ur.GetUsuarioByName(nomb);
+
+            if (user == null)
+            {
+                return false;
+            }
+
+            byte[] hashedPassword = SecurityHelper.HashPassword(pass, user.Salt);
+
+            return hashedPassword.SequenceEqual(user.Hash);
+        }
     }
 }

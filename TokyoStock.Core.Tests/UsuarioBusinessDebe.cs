@@ -30,5 +30,18 @@ namespace TokyoStock.Core.Tests
             Assert.Equal(nombre, dbUsuario.Nombre);
         }
 
+        [Fact]
+        public void ValidarUsuario()
+        {
+            var ur = new UsuarioRepository();
+            var ub = new UsuarioBusiness(ur);
+
+            ub.GetUsuarioByName("Prueba");
+
+            var a = ub.ValidarUsuario("Prueba", "123");
+
+            Assert.True(a);
+        }
+
     }
 }
