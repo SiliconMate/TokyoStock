@@ -28,7 +28,7 @@ namespace TokyoStock.Core.Business
             return hashedBytes;
         }
 
-        public static string HashPassword1Hex(string password, byte[] salt)
+        public static string HashPasswordHex(string password, byte[] salt)
         {
             return Convert.ToBase64String(HashPassword(password, salt));
         }
