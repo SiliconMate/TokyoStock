@@ -11,7 +11,14 @@
 <form asp-action="Registrar" method="post">
     <div class="form-group">
         <label for="Fecha">Fecha</label>
-        <input type="date" class="form-control" id="Fecha" name="Fecha" required>
+        <input 
+            type="date" 
+            class="form-control" 
+            id="Fecha" 
+            name="Fecha" 
+            min= @DateTime.Now.AddDays(-7).ToString("yyyy-MM-dd")
+            max= @DateTime.Now.ToString("yyyy-MM-dd")
+            required>
     </div>
     <div class="form-group">
         <label for="ProductoId">Producto</label>

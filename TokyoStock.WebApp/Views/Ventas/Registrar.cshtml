@@ -1,2 +1,20 @@
 ﻿
 <h1>Esto es el registro del controlador Ventas</h1>
+
+<form asp-action="Registrar" method="post">
+    <div class="form-group">
+        <label for="ProductoId">Producto</label>
+        <select class="form-control" id="ProductoId" name="ProductoId" required>
+            <option value="">Seleccione un producto</option>
+            @foreach (var producto in ViewBag.Productos)
+            {
+                <option value="@producto.ProductoId">@producto.Nombre</option>
+            }
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="Cantidad">Cantidad</label>
+        <input type="number" class="form-control" id="Cantidad" name="Cantidad" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Registrar</button>
+ </form>
