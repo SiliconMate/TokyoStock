@@ -1,3 +1,4 @@
+using TokyoStock.Core.Business;
 using TokyoStock.Core.Data;
 
 namespace TokyoStock.WebApp
@@ -10,6 +11,11 @@ namespace TokyoStock.WebApp
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+
+            builder.Services.AddScoped<UsuarioRepository>();
+            builder.Services.AddScoped<UsuarioBusiness>();
+            builder.Services.AddScoped<ProductoRepository>();
+            builder.Services.AddScoped<ProductoBusiness>();
 
             var app = builder.Build();
 
