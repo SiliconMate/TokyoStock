@@ -9,15 +9,13 @@ namespace TokyoStock.App
     {
         private static ProductoRepository productoRepository = new ProductoRepository();
         private static ProductoBusiness productoBusiness = new ProductoBusiness(productoRepository);
+        public static bool _isLogged = false;
         public HomeForm1()
         {
             InitializeComponent();
-        }
-
-        private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e)
-        {
             InitControls();
         }
+        
         private void InitControls()
         {
 
@@ -63,12 +61,19 @@ namespace TokyoStock.App
         {
             var initForm = new InitForm();
             initForm.ShowDialog();
+            if (_isLogged)
+            {
+                btAdministracion.Visible = true;
+                btLista.Visible = true;
+                btVentas.Visible = true;
+                btBuscar.Visible = true;
+                tbNombre.Visible = true;
+                comboBox1.Visible = true;
+                label2.Visible = true;
+                dataGridView1.Visible = true;
+            }
         }
 
-        private void splitContainer1_Panel2_Paint(object sender, PaintEventArgs e)
-        {
-            label1.BackColor = Color.Transparent;
-        }
 
         private void btAdministracion_Click(object sender, EventArgs e)
         {

@@ -32,15 +32,15 @@
             panel1 = new Panel();
             splitContainer1 = new SplitContainer();
             panel2 = new Panel();
-            button1 = new Button();
-            textBox2 = new TextBox();
-            textBox1 = new TextBox();
+            btEntrar = new Button();
+            tbContraIngreso = new TextBox();
+            tbUsuarioIngreso = new TextBox();
             label1 = new Label();
             pictureBox1 = new PictureBox();
             panel3 = new Panel();
-            button2 = new Button();
-            textBox3 = new TextBox();
-            textBox4 = new TextBox();
+            btRegistrar = new Button();
+            tbContraRegistro = new TextBox();
+            tbUsuarioRegistro = new TextBox();
             label2 = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
@@ -83,48 +83,53 @@
             // panel2
             // 
             panel2.BackColor = SystemColors.ControlLight;
-            panel2.Controls.Add(button1);
-            panel2.Controls.Add(textBox2);
-            panel2.Controls.Add(textBox1);
+            panel2.Controls.Add(btEntrar);
+            panel2.Controls.Add(tbContraIngreso);
+            panel2.Controls.Add(tbUsuarioIngreso);
             panel2.Controls.Add(label1);
             panel2.Location = new Point(16, 48);
             panel2.Name = "panel2";
             panel2.Size = new Size(200, 208);
             panel2.TabIndex = 0;
             // 
-            // button1
+            // btEntrar
             // 
-            button1.BackColor = SystemColors.Highlight;
-            button1.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.ForeColor = SystemColors.Control;
-            button1.Location = new Point(87, 162);
-            button1.Name = "button1";
-            button1.Size = new Size(92, 34);
-            button1.TabIndex = 3;
-            button1.Text = "Entrar";
-            button1.UseVisualStyleBackColor = false;
+            btEntrar.BackColor = SystemColors.Highlight;
+            btEntrar.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btEntrar.ForeColor = SystemColors.Control;
+            btEntrar.Location = new Point(87, 162);
+            btEntrar.Name = "btEntrar";
+            btEntrar.Size = new Size(92, 34);
+            btEntrar.TabIndex = 3;
+            btEntrar.Text = "Entrar";
+            btEntrar.UseVisualStyleBackColor = false;
+            btEntrar.Click += btEntrar_Click;
             // 
-            // textBox2
+            // tbContraIngreso
             // 
-            textBox2.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            textBox2.ForeColor = SystemColors.ButtonShadow;
-            textBox2.Location = new Point(14, 118);
-            textBox2.Name = "textBox2";
-            textBox2.RightToLeft = RightToLeft.No;
-            textBox2.Size = new Size(165, 23);
-            textBox2.TabIndex = 2;
-            textBox2.Text = "Contraseña";
+            tbContraIngreso.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            tbContraIngreso.ForeColor = SystemColors.ButtonShadow;
+            tbContraIngreso.Location = new Point(14, 118);
+            tbContraIngreso.Name = "tbContraIngreso";
+            tbContraIngreso.RightToLeft = RightToLeft.No;
+            tbContraIngreso.Size = new Size(165, 23);
+            tbContraIngreso.TabIndex = 2;
+            tbContraIngreso.Text = "Contraseña";
+            tbContraIngreso.Enter += tbContraIngreso_Enter;
+            tbContraIngreso.Leave += tbContraIngreso_Leave;
             // 
-            // textBox1
+            // tbUsuarioIngreso
             // 
-            textBox1.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            textBox1.ForeColor = SystemColors.ButtonShadow;
-            textBox1.Location = new Point(14, 76);
-            textBox1.Name = "textBox1";
-            textBox1.RightToLeft = RightToLeft.No;
-            textBox1.Size = new Size(165, 23);
-            textBox1.TabIndex = 1;
-            textBox1.Text = "Usuario";
+            tbUsuarioIngreso.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            tbUsuarioIngreso.ForeColor = SystemColors.ButtonShadow;
+            tbUsuarioIngreso.Location = new Point(14, 76);
+            tbUsuarioIngreso.Name = "tbUsuarioIngreso";
+            tbUsuarioIngreso.RightToLeft = RightToLeft.No;
+            tbUsuarioIngreso.Size = new Size(165, 23);
+            tbUsuarioIngreso.TabIndex = 1;
+            tbUsuarioIngreso.Text = "Usuario";
+            tbUsuarioIngreso.Enter += tbUsuarioIngreso_Enter;
+            tbUsuarioIngreso.Leave += tbUsuarioIngreso_Leave;
             // 
             // label1
             // 
@@ -149,48 +154,52 @@
             // panel3
             // 
             panel3.BackColor = SystemColors.ControlLight;
-            panel3.Controls.Add(button2);
-            panel3.Controls.Add(textBox3);
-            panel3.Controls.Add(textBox4);
+            panel3.Controls.Add(btRegistrar);
+            panel3.Controls.Add(tbContraRegistro);
+            panel3.Controls.Add(tbUsuarioRegistro);
             panel3.Controls.Add(label2);
             panel3.Location = new Point(14, 19);
             panel3.Name = "panel3";
             panel3.Size = new Size(200, 205);
             panel3.TabIndex = 1;
             // 
-            // button2
+            // btRegistrar
             // 
-            button2.BackColor = SystemColors.Highlight;
-            button2.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button2.ForeColor = SystemColors.Control;
-            button2.Location = new Point(14, 136);
-            button2.Name = "button2";
-            button2.Size = new Size(165, 34);
-            button2.TabIndex = 3;
-            button2.Text = "Registrarse";
-            button2.UseVisualStyleBackColor = false;
+            btRegistrar.BackColor = SystemColors.Highlight;
+            btRegistrar.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btRegistrar.ForeColor = SystemColors.Control;
+            btRegistrar.Location = new Point(14, 136);
+            btRegistrar.Name = "btRegistrar";
+            btRegistrar.Size = new Size(165, 34);
+            btRegistrar.TabIndex = 3;
+            btRegistrar.Text = "Registrarse";
+            btRegistrar.UseVisualStyleBackColor = false;
             // 
-            // textBox3
+            // tbContraRegistro
             // 
-            textBox3.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            textBox3.ForeColor = SystemColors.ButtonShadow;
-            textBox3.Location = new Point(14, 92);
-            textBox3.Name = "textBox3";
-            textBox3.RightToLeft = RightToLeft.No;
-            textBox3.Size = new Size(165, 23);
-            textBox3.TabIndex = 2;
-            textBox3.Text = "Contraseña";
+            tbContraRegistro.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            tbContraRegistro.ForeColor = SystemColors.ButtonShadow;
+            tbContraRegistro.Location = new Point(14, 92);
+            tbContraRegistro.Name = "tbContraRegistro";
+            tbContraRegistro.RightToLeft = RightToLeft.No;
+            tbContraRegistro.Size = new Size(165, 23);
+            tbContraRegistro.TabIndex = 2;
+            tbContraRegistro.Text = "Contraseña";
+            tbContraRegistro.Enter += tbContraRegistro_Enter;
+            tbContraRegistro.Leave += tbContraRegistro_Leave;
             // 
-            // textBox4
+            // tbUsuarioRegistro
             // 
-            textBox4.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            textBox4.ForeColor = SystemColors.ButtonShadow;
-            textBox4.Location = new Point(14, 54);
-            textBox4.Name = "textBox4";
-            textBox4.RightToLeft = RightToLeft.No;
-            textBox4.Size = new Size(165, 23);
-            textBox4.TabIndex = 1;
-            textBox4.Text = "Usuario";
+            tbUsuarioRegistro.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            tbUsuarioRegistro.ForeColor = SystemColors.ButtonShadow;
+            tbUsuarioRegistro.Location = new Point(14, 54);
+            tbUsuarioRegistro.Name = "tbUsuarioRegistro";
+            tbUsuarioRegistro.RightToLeft = RightToLeft.No;
+            tbUsuarioRegistro.Size = new Size(165, 23);
+            tbUsuarioRegistro.TabIndex = 1;
+            tbUsuarioRegistro.Text = "Usuario";
+            tbUsuarioRegistro.Enter += tbUsuarioRegistro_Enter;
+            tbUsuarioRegistro.Leave += tbUsuarioRegistro_Leave;
             // 
             // label2
             // 
@@ -230,14 +239,14 @@
         private Panel panel1;
         private SplitContainer splitContainer1;
         private Panel panel2;
-        private TextBox textBox2;
-        private TextBox textBox1;
+        private TextBox tbContraIngreso;
+        private TextBox tbUsuarioIngreso;
         private Label label1;
-        private Button button1;
+        private Button btEntrar;
         private Panel panel3;
-        private Button button2;
-        private TextBox textBox3;
-        private TextBox textBox4;
+        private Button btRegistrar;
+        private TextBox tbContraRegistro;
+        private TextBox tbUsuarioRegistro;
         private Label label2;
         private PictureBox pictureBox1;
     }

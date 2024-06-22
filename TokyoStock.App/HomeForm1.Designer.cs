@@ -65,7 +65,6 @@
             splitContainer1.Panel1.Controls.Add(btLista);
             splitContainer1.Panel1.Controls.Add(btVentas);
             splitContainer1.Panel1.Controls.Add(pictureBox1);
-            splitContainer1.Panel1.Paint += splitContainer1_Panel1_Paint;
             // 
             // splitContainer1.Panel2
             // 
@@ -76,7 +75,6 @@
             splitContainer1.Panel2.Controls.Add(comboBox1);
             splitContainer1.Panel2.Controls.Add(tbNombre);
             splitContainer1.Panel2.Controls.Add(dataGridView1);
-            splitContainer1.Panel2.Paint += splitContainer1_Panel2_Paint;
             splitContainer1.Size = new Size(800, 450);
             splitContainer1.SplitterDistance = 162;
             splitContainer1.TabIndex = 0;
@@ -123,6 +121,7 @@
             btAdministracion.TabIndex = 2;
             btAdministracion.Text = "Administracion";
             btAdministracion.UseVisualStyleBackColor = false;
+            btAdministracion.Visible = false;
             btAdministracion.Click += btAdministracion_Click;
             // 
             // btLista
@@ -136,6 +135,7 @@
             btLista.TabIndex = 5;
             btLista.Text = "Lo mas vendido";
             btLista.UseVisualStyleBackColor = false;
+            btLista.Visible = false;
             btLista.Click += btLista_Click;
             // 
             // btVentas
@@ -150,6 +150,7 @@
             btVentas.TabIndex = 1;
             btVentas.Text = "Compras / Ventas";
             btVentas.UseVisualStyleBackColor = false;
+            btVentas.Visible = false;
             btVentas.Click += btVentas_Click;
             // 
             // pictureBox1
@@ -171,11 +172,12 @@
             label2.Size = new Size(61, 17);
             label2.TabIndex = 5;
             label2.Text = "Nombre:";
+            label2.Visible = false;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.BackColor = SystemColors.Control;
+            label1.BackColor = Color.LightSkyBlue;
             label1.Font = new Font("Segoe UI", 27.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = SystemColors.ActiveCaptionText;
             label1.Location = new Point(222, 30);
@@ -192,6 +194,7 @@
             btBuscar.TabIndex = 3;
             btBuscar.Text = "Buscar";
             btBuscar.UseVisualStyleBackColor = true;
+            btBuscar.Visible = false;
             btBuscar.Click += btBuscar_Click;
             // 
             // comboBox1
@@ -202,6 +205,7 @@
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(144, 23);
             comboBox1.TabIndex = 2;
+            comboBox1.Visible = false;
             // 
             // tbNombre
             // 
@@ -210,6 +214,7 @@
             tbNombre.Name = "tbNombre";
             tbNombre.Size = new Size(109, 23);
             tbNombre.TabIndex = 1;
+            tbNombre.Visible = false;
             // 
             // dataGridView1
             // 
@@ -222,6 +227,7 @@
             dataGridView1.ReadOnly = true;
             dataGridView1.Size = new Size(598, 297);
             dataGridView1.TabIndex = 0;
+            dataGridView1.Visible = false;
             // 
             // HomeForm1
             // 
