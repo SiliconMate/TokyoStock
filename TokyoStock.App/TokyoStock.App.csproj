@@ -9,6 +9,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\TokyoStock.Core.Business\TokyoStock.Core.Business.csproj" />
+    <ProjectReference Include="..\TokyoStock.Core.Data\TokyoStock.Core.Data.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Update="Properties\Resources.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>

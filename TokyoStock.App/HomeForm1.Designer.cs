@@ -36,10 +36,11 @@
             btLista = new Button();
             btVentas = new Button();
             pictureBox1 = new PictureBox();
+            label2 = new Label();
             label1 = new Label();
-            button1 = new Button();
+            btBuscar = new Button();
             comboBox1 = new ComboBox();
-            textBox1 = new TextBox();
+            tbNombre = new TextBox();
             dataGridView1 = new DataGridView();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
@@ -69,10 +70,11 @@
             // splitContainer1.Panel2
             // 
             splitContainer1.Panel2.BackColor = Color.LightSkyBlue;
+            splitContainer1.Panel2.Controls.Add(label2);
             splitContainer1.Panel2.Controls.Add(label1);
-            splitContainer1.Panel2.Controls.Add(button1);
+            splitContainer1.Panel2.Controls.Add(btBuscar);
             splitContainer1.Panel2.Controls.Add(comboBox1);
-            splitContainer1.Panel2.Controls.Add(textBox1);
+            splitContainer1.Panel2.Controls.Add(tbNombre);
             splitContainer1.Panel2.Controls.Add(dataGridView1);
             splitContainer1.Panel2.Paint += splitContainer1_Panel2_Paint;
             splitContainer1.Size = new Size(800, 450);
@@ -160,6 +162,16 @@
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.Location = new Point(205, 105);
+            label2.Name = "label2";
+            label2.Size = new Size(61, 17);
+            label2.TabIndex = 5;
+            label2.Text = "Nombre:";
+            // 
             // label1
             // 
             label1.AutoSize = true;
@@ -172,39 +184,42 @@
             label1.TabIndex = 4;
             label1.Text = "Productos";
             // 
-            // button1
+            // btBuscar
             // 
-            button1.Location = new Point(537, 103);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 3;
-            button1.Text = "Buscar";
-            button1.UseVisualStyleBackColor = true;
+            btBuscar.Location = new Point(537, 103);
+            btBuscar.Name = "btBuscar";
+            btBuscar.Size = new Size(75, 23);
+            btBuscar.TabIndex = 3;
+            btBuscar.Text = "Buscar";
+            btBuscar.UseVisualStyleBackColor = true;
+            btBuscar.Click += btBuscar_Click;
             // 
             // comboBox1
             // 
+            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(416, 103);
+            comboBox1.Location = new Point(387, 103);
             comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(115, 23);
+            comboBox1.Size = new Size(144, 23);
             comboBox1.TabIndex = 2;
-            comboBox1.Text = "Categoria";
             // 
-            // textBox1
+            // tbNombre
             // 
-            textBox1.ForeColor = SystemColors.ButtonShadow;
-            textBox1.Location = new Point(301, 103);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(109, 23);
-            textBox1.TabIndex = 1;
-            textBox1.Text = "Nombre";
+            tbNombre.ForeColor = SystemColors.ControlText;
+            tbNombre.Location = new Point(272, 103);
+            tbNombre.Name = "tbNombre";
+            tbNombre.Size = new Size(109, 23);
+            tbNombre.TabIndex = 1;
             // 
             // dataGridView1
             // 
+            dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.BackgroundColor = SystemColors.GradientInactiveCaption;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(14, 141);
+            dataGridView1.Location = new Point(13, 141);
             dataGridView1.Name = "dataGridView1";
+            dataGridView1.ReadOnly = true;
             dataGridView1.Size = new Size(598, 297);
             dataGridView1.TabIndex = 0;
             // 
@@ -216,7 +231,7 @@
             Controls.Add(splitContainer1);
             Name = "HomeForm1";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Form1";
+            Text = "TokyoStore";
             splitContainer1.Panel1.ResumeLayout(false);
             splitContainer1.Panel2.ResumeLayout(false);
             splitContainer1.Panel2.PerformLayout();
@@ -237,9 +252,10 @@
         private Button btSalir;
         private Button btIniciar;
         private DataGridView dataGridView1;
-        private Button button1;
+        private Button btBuscar;
         private ComboBox comboBox1;
-        private TextBox textBox1;
+        private TextBox tbNombre;
         private Label label1;
+        private Label label2;
     }
 }

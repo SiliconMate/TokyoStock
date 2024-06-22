@@ -38,6 +38,8 @@
             button3 = new Button();
             button4 = new Button();
             panel1 = new Panel();
+            label4 = new Label();
+            textBox2 = new TextBox();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -56,7 +58,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(92, 44);
+            label2.Location = new Point(92, 73);
             label2.Name = "label2";
             label2.Size = new Size(75, 21);
             label2.TabIndex = 1;
@@ -65,7 +67,7 @@
             // comboBox1
             // 
             comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(175, 88);
+            comboBox1.Location = new Point(175, 112);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(121, 23);
             comboBox1.TabIndex = 2;
@@ -74,7 +76,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(82, 88);
+            label3.Location = new Point(82, 110);
             label3.Name = "label3";
             label3.Size = new Size(85, 21);
             label3.TabIndex = 3;
@@ -82,7 +84,7 @@
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(175, 46);
+            textBox1.Location = new Point(175, 73);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(121, 23);
             textBox1.TabIndex = 4;
@@ -90,7 +92,7 @@
             // button1
             // 
             button1.BackColor = Color.FromArgb(224, 224, 224);
-            button1.Location = new Point(325, 64);
+            button1.Location = new Point(325, 36);
             button1.Name = "button1";
             button1.Size = new Size(75, 23);
             button1.TabIndex = 5;
@@ -127,6 +129,8 @@
             // panel1
             // 
             panel1.BackColor = Color.PapayaWhip;
+            panel1.Controls.Add(label4);
+            panel1.Controls.Add(textBox2);
             panel1.Controls.Add(button2);
             panel1.Controls.Add(label2);
             panel1.Controls.Add(textBox1);
@@ -139,6 +143,23 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(460, 252);
             panel1.TabIndex = 9;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label4.Location = new Point(127, 34);
+            label4.Name = "label4";
+            label4.Size = new Size(30, 21);
+            label4.TabIndex = 9;
+            label4.Text = "ID:";
+            // 
+            // textBox2
+            // 
+            textBox2.Location = new Point(175, 36);
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(121, 23);
+            textBox2.TabIndex = 10;
             // 
             // AdministracionForm
             // 
@@ -169,5 +190,7 @@
         private Button button3;
         private Button button4;
         private Panel panel1;
+        private Label label4;
+        private TextBox textBox2;
     }
 }

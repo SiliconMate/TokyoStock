@@ -29,20 +29,28 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
-            label1 = new Label();
             dataGridView1 = new DataGridView();
+            label1 = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // panel1
             // 
-            panel1.BackColor = Color.PeachPuff;
+            panel1.BackColor = Color.MistyRose;
             panel1.Controls.Add(dataGridView1);
             panel1.Location = new Point(12, 63);
             panel1.Name = "panel1";
             panel1.Size = new Size(460, 251);
             panel1.TabIndex = 0;
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(13, 12);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.Size = new Size(432, 224);
+            dataGridView1.TabIndex = 0;
             // 
             // label1
             // 
@@ -54,14 +62,6 @@
             label1.Size = new Size(264, 50);
             label1.TabIndex = 1;
             label1.Text = "Mas Vendidos";
-            // 
-            // dataGridView1
-            // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(13, 12);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(432, 224);
-            dataGridView1.TabIndex = 0;
             // 
             // ListaForm
             // 
