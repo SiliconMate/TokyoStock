@@ -1,0 +1,28 @@
+﻿body, html {
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    height: 100%;
+}
+
+.container-fluid {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.row {
+    flex: 1;
+}
+
+.bg-gris {
+    background-color: #ddd9d9;
+}
+
+.shadow-r {
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+}
+
+.shadow-b {
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+}
