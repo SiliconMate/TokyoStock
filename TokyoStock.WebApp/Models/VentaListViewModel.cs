@@ -11,5 +11,4 @@ namespace testPaginacion.Models
         public bool HasPreviousPage => PageIndex > 1;
         public bool HasNextPage => PageIndex < TotalPages;
     }
-
 }
