@@ -89,7 +89,7 @@
             // 
             // button1
             // 
-            button1.BackColor = Color.NavajoWhite;
+            button1.BackColor = Color.FromArgb(224, 224, 224);
             button1.Location = new Point(325, 64);
             button1.Name = "button1";
             button1.Size = new Size(75, 23);
@@ -99,7 +99,7 @@
             // 
             // button2
             // 
-            button2.Location = new Point(69, 173);
+            button2.Location = new Point(82, 173);
             button2.Name = "button2";
             button2.Size = new Size(75, 23);
             button2.TabIndex = 6;
@@ -108,7 +108,7 @@
             // 
             // button3
             // 
-            button3.Location = new Point(199, 173);
+            button3.Location = new Point(205, 173);
             button3.Name = "button3";
             button3.Size = new Size(75, 23);
             button3.TabIndex = 7;

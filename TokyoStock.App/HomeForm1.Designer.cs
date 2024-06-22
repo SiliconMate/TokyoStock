@@ -132,8 +132,9 @@
             btLista.Name = "btLista";
             btLista.Size = new Size(135, 37);
             btLista.TabIndex = 5;
-            btLista.Text = "Listados";
+            btLista.Text = "Lo mas vendido";
             btLista.UseVisualStyleBackColor = false;
+            btLista.Click += btLista_Click;
             // 
             // btVentas
             // 
@@ -145,8 +146,9 @@
             btVentas.Name = "btVentas";
             btVentas.Size = new Size(135, 37);
             btVentas.TabIndex = 1;
-            btVentas.Text = "Ventas";
+            btVentas.Text = "Compras / Ventas";
             btVentas.UseVisualStyleBackColor = false;
+            btVentas.Click += btVentas_Click;
             // 
             // pictureBox1
             // 
@@ -190,6 +192,7 @@
             // 
             // textBox1
             // 
+            textBox1.ForeColor = SystemColors.ButtonShadow;
             textBox1.Location = new Point(301, 103);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(109, 23);

@@ -20,7 +20,7 @@ namespace TokyoStock.App
         private void btIniciar_Click(object sender, EventArgs e)
         {
             var initForm = new InitForm();
-            initForm.Show();
+            initForm.ShowDialog();
         }
 
         private void splitContainer1_Panel2_Paint(object sender, PaintEventArgs e)
@@ -31,7 +31,19 @@ namespace TokyoStock.App
         private void btAdministracion_Click(object sender, EventArgs e)
         {
             var adminForm = new AdministracionForm();
-            adminForm.Show();
+            adminForm.ShowDialog();
+        }
+
+        private void btLista_Click(object sender, EventArgs e)
+        {
+           var listaform = new ListaForm();
+            listaform.ShowDialog();
+        }
+
+        private void btVentas_Click(object sender, EventArgs e)
+        {
+            var cvform = new CompraVentaForm();
+            cvform.ShowDialog();
         }
     }
 }
