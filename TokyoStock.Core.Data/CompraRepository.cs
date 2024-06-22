@@ -1,5 +1,6 @@
 ﻿
 using TokyoStock.Core.Entities;
+using TokyoStock.Core.Entities.Filters;
 
 namespace TokyoStock.Core.Data
 {
@@ -17,6 +18,21 @@ namespace TokyoStock.Core.Data
             using (var db = new TokyoStockContext())
             {
                 list = db.Compras.ToList();
+            }
+
+            return list;
+        }
+
+        public List<Compra> GetComprasByFilter(Filter filter)
+        {
+            var list = new List<Compra>();
+
+            using (var db = new TokyoStockContext())
+            {
+                list = db.Compras
+                    .Skip((filter.PageIndex - 1) * filter.PageSize)
+                    .Take(filter.PageSize)
+                    .ToList();
             }
 
             return list;
