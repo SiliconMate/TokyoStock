@@ -36,12 +36,12 @@
             btLista = new Button();
             btVentas = new Button();
             pictureBox1 = new PictureBox();
+            dataGridView1 = new DataGridView();
             label2 = new Label();
             label1 = new Label();
             btBuscar = new Button();
             comboBox1 = new ComboBox();
             tbNombre = new TextBox();
-            dataGridView1 = new DataGridView();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
@@ -69,12 +69,12 @@
             // splitContainer1.Panel2
             // 
             splitContainer1.Panel2.BackColor = Color.LightSkyBlue;
+            splitContainer1.Panel2.Controls.Add(dataGridView1);
             splitContainer1.Panel2.Controls.Add(label2);
             splitContainer1.Panel2.Controls.Add(label1);
             splitContainer1.Panel2.Controls.Add(btBuscar);
             splitContainer1.Panel2.Controls.Add(comboBox1);
             splitContainer1.Panel2.Controls.Add(tbNombre);
-            splitContainer1.Panel2.Controls.Add(dataGridView1);
             splitContainer1.Size = new Size(800, 450);
             splitContainer1.SplitterDistance = 162;
             splitContainer1.TabIndex = 0;
@@ -163,6 +163,17 @@
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
+            // dataGridView1
+            // 
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(15, 132);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.ReadOnly = true;
+            dataGridView1.Size = new Size(607, 306);
+            dataGridView1.TabIndex = 6;
+            dataGridView1.Visible = false;
+            // 
             // label2
             // 
             label2.AutoSize = true;
@@ -216,19 +227,6 @@
             tbNombre.TabIndex = 1;
             tbNombre.Visible = false;
             // 
-            // dataGridView1
-            // 
-            dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridView1.BackgroundColor = SystemColors.GradientInactiveCaption;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(13, 141);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.ReadOnly = true;
-            dataGridView1.Size = new Size(598, 297);
-            dataGridView1.TabIndex = 0;
-            dataGridView1.Visible = false;
-            // 
             // HomeForm1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -257,11 +255,11 @@
         private Button btLista;
         private Button btSalir;
         private Button btIniciar;
-        private DataGridView dataGridView1;
         private Button btBuscar;
         private ComboBox comboBox1;
         private TextBox tbNombre;
         private Label label1;
         private Label label2;
+        private DataGridView dataGridView1;
     }
 }

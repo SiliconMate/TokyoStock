@@ -44,8 +44,8 @@ namespace TokyoStock.App
 
             comboBox1.DataSource = ds;
             comboBox1.DisplayMember = "CategoriaNombre";
-            dataGridView1.DataSource = ds;
             dataGridView1.AutoGenerateColumns = false;
+            dataGridView1.DataSource = ds;
 
             dataGridView1.Columns["ProductoId"].DataPropertyName = "ProductoId";
             dataGridView1.Columns["Nombre"].DataPropertyName = "Nombre";

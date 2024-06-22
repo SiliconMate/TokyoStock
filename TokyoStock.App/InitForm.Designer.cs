@@ -174,6 +174,7 @@
             btRegistrar.TabIndex = 3;
             btRegistrar.Text = "Registrarse";
             btRegistrar.UseVisualStyleBackColor = false;
+            btRegistrar.Click += btRegistrar_Click;
             // 
             // tbContraRegistro
             // 

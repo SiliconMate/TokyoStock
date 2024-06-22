@@ -29,8 +29,6 @@ namespace TokyoStock.App
             if (usuarioBusiness.ValidarUsuario(usuario, pass))
             {
                 HomeForm1._isLogged = true;
-                var homeForm = new HomeForm1();
-                homeForm.Show();
                 Hide();
             }
             else
@@ -38,6 +36,19 @@ namespace TokyoStock.App
                 MessageBox.Show("Usuario o contraseña incorrectos");
             }
 
+        }
+        private void btRegistrar_Click(object sender, EventArgs e)
+        {
+            var usuario = tbUsuarioRegistro.Text;
+            var pass = tbContraRegistro.Text;
+            usuarioBusiness.RegistrarUsuario(usuario, pass);
+           
+            
+                MessageBox.Show("Usuario registrado correctamente");
+            
+           
+                MessageBox.Show("Error al registrar usuario");
+            
         }
 
         private void tbUsuarioIngreso_Enter(object sender, EventArgs e)
@@ -110,5 +121,6 @@ namespace TokyoStock.App
                 tbContraRegistro.ForeColor = SystemColors.GrayText;
             }
         }
+
     }
 }
