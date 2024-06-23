@@ -29,28 +29,29 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
-            dataGridView1 = new DataGridView();
+            dgvVendido = new DataGridView();
             label1 = new Label();
             panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvVendido).BeginInit();
             SuspendLayout();
             // 
             // panel1
             // 
             panel1.BackColor = Color.MistyRose;
-            panel1.Controls.Add(dataGridView1);
+            panel1.Controls.Add(dgvVendido);
             panel1.Location = new Point(12, 63);
             panel1.Name = "panel1";
             panel1.Size = new Size(460, 251);
             panel1.TabIndex = 0;
             // 
-            // dataGridView1
+            // dgvVendido
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(13, 12);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(432, 224);
-            dataGridView1.TabIndex = 0;
+            dgvVendido.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvVendido.Location = new Point(13, 12);
+            dgvVendido.Name = "dgvVendido";
+            dgvVendido.ReadOnly = true;
+            dgvVendido.Size = new Size(432, 224);
+            dgvVendido.TabIndex = 0;
             // 
             // label1
             // 
@@ -75,7 +76,7 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "ListaForm";
             panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvVendido).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -83,7 +84,7 @@
         #endregion
 
         private Panel panel1;
-        private DataGridView dataGridView1;
+        private DataGridView dgvVendido;
         private Label label1;
     }
 }

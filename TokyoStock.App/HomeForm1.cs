@@ -95,8 +95,12 @@ namespace TokyoStock.App
                 btBuscar.Visible = true;
                 tbNombre.Visible = true;
                 comboBox1.Visible = true;
+                label1.Visible = true;
                 label2.Visible = true;
+                label3.Visible = true;
                 dataGridView1.Visible = true;
+                btAnterior.Visible = true;
+                btSiguiente.Visible = true;
             }
         }
 

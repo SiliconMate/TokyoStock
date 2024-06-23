@@ -142,7 +142,6 @@
             btLista.TabIndex = 5;
             btLista.Text = "Lo mas vendido";
             btLista.UseVisualStyleBackColor = false;
-            btLista.Visible = false;
             btLista.Click += btLista_Click;
             // 
             // btVentas
@@ -178,6 +177,7 @@
             label3.Size = new Size(58, 21);
             label3.TabIndex = 10;
             label3.Text = "Pagina";
+            label3.Visible = false;
             // 
             // btAnterior
             // 
@@ -187,6 +187,7 @@
             btAnterior.TabIndex = 9;
             btAnterior.Text = "Anterior";
             btAnterior.UseVisualStyleBackColor = true;
+            btAnterior.Visible = false;
             btAnterior.Click += btAnterior_Click;
             // 
             // btSiguiente
@@ -197,6 +198,7 @@
             btSiguiente.TabIndex = 8;
             btSiguiente.Text = "Siguiente";
             btSiguiente.UseVisualStyleBackColor = true;
+            btSiguiente.Visible = false;
             btSiguiente.Click += btSiguiente_Click;
             // 
             // btCancelar
@@ -243,6 +245,7 @@
             label1.Size = new Size(199, 50);
             label1.TabIndex = 4;
             label1.Text = "Productos";
+            label1.Visible = false;
             // 
             // btBuscar
             // 
