@@ -12,6 +12,8 @@ namespace TokyoStock.WebApp
             // Add services to the container.
             builder.Services.AddControllersWithViews();
 
+            builder.Services.AddScoped<VentaRepository>();
+            builder.Services.AddScoped<VentaBusiness>();
             builder.Services.AddScoped<CompraRepository>();
             builder.Services.AddScoped<CompraBusiness>();
             builder.Services.AddScoped<UsuarioRepository>();
