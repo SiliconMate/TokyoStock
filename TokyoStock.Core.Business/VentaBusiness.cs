@@ -9,10 +9,17 @@ namespace TokyoStock.Core.Business
     public class VentaBusiness
     {
         private readonly VentaRepository _vr;
+        private readonly CompraRepository _cr;
 
         public VentaBusiness(VentaRepository vr)
         {
             _vr = vr;
+        }
+
+        public VentaBusiness(VentaRepository vr, CompraRepository cr)
+        {
+            _vr = vr;
+            _cr = cr;
         }
 
         public List<Venta> GetVentas()
@@ -29,7 +36,14 @@ namespace TokyoStock.Core.Business
 
         public void AddVenta(Venta v)
 		{
-			_vr.AddVenta(v);
+            var cantCompra = _cr.GetCompras().Where(c => c.ProductoId == v.ProductoId).Sum(c => c.Cantidad);
+
+            if (cantCompra > v.Cantidad)
+            {
+                _vr.AddVenta(v);
+            }
+            
+            Console.WriteLine("No hay suficiente stock para realizar la venta");
 		}
     }
 }
