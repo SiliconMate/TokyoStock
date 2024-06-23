@@ -121,7 +121,6 @@
             btAdministracion.TabIndex = 2;
             btAdministracion.Text = "Administracion";
             btAdministracion.UseVisualStyleBackColor = false;
-            btAdministracion.Visible = false;
             btAdministracion.Click += btAdministracion_Click;
             // 
             // btLista

@@ -221,7 +221,7 @@
             Controls.Add(panel1);
             Name = "InitForm";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "InitForm";
+            Text = "Usuarios";
             panel1.ResumeLayout(false);
             splitContainer1.Panel1.ResumeLayout(false);
             splitContainer1.Panel2.ResumeLayout(false);

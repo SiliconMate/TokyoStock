@@ -30,16 +30,16 @@
         {
             label1 = new Label();
             label2 = new Label();
-            comboBox1 = new ComboBox();
+            cbCategoria = new ComboBox();
             label3 = new Label();
-            textBox1 = new TextBox();
-            button1 = new Button();
-            button2 = new Button();
-            button3 = new Button();
-            button4 = new Button();
+            tbId = new TextBox();
+            btBuscar = new Button();
+            btAgregar = new Button();
+            btGuardar = new Button();
+            btEliminar = new Button();
             panel1 = new Panel();
             label4 = new Label();
-            textBox2 = new TextBox();
+            tbNombre = new TextBox();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -58,87 +58,91 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(92, 73);
+            label2.Location = new Point(73, 73);
             label2.Name = "label2";
             label2.Size = new Size(75, 21);
             label2.TabIndex = 1;
             label2.Text = "Nombre:";
             // 
-            // comboBox1
+            // cbCategoria
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(175, 112);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(121, 23);
-            comboBox1.TabIndex = 2;
+            cbCategoria.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbCategoria.FormattingEnabled = true;
+            cbCategoria.Location = new Point(154, 112);
+            cbCategoria.Name = "cbCategoria";
+            cbCategoria.Size = new Size(159, 23);
+            cbCategoria.TabIndex = 2;
             // 
             // label3
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(82, 110);
+            label3.Location = new Point(63, 110);
             label3.Name = "label3";
             label3.Size = new Size(85, 21);
             label3.TabIndex = 3;
             label3.Text = "Categoria:";
             // 
-            // textBox1
+            // tbId
             // 
-            textBox1.Location = new Point(175, 73);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(121, 23);
-            textBox1.TabIndex = 4;
+            tbId.Location = new Point(154, 37);
+            tbId.Name = "tbId";
+            tbId.Size = new Size(59, 23);
+            tbId.TabIndex = 4;
+            tbId.TextChanged += tbId_TextChanged;
             // 
-            // button1
+            // btBuscar
             // 
-            button1.BackColor = Color.FromArgb(224, 224, 224);
-            button1.Location = new Point(325, 36);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 5;
-            button1.Text = "Buscar";
-            button1.UseVisualStyleBackColor = false;
+            btBuscar.BackColor = Color.FromArgb(224, 224, 224);
+            btBuscar.Location = new Point(238, 37);
+            btBuscar.Name = "btBuscar";
+            btBuscar.Size = new Size(75, 23);
+            btBuscar.TabIndex = 5;
+            btBuscar.Text = "Buscar";
+            btBuscar.UseVisualStyleBackColor = false;
+            btBuscar.Click += btBuscar_Click;
             // 
-            // button2
+            // btAgregar
             // 
-            button2.Location = new Point(82, 173);
-            button2.Name = "button2";
-            button2.Size = new Size(75, 23);
-            button2.TabIndex = 6;
-            button2.Text = "Agregar";
-            button2.UseVisualStyleBackColor = true;
+            btAgregar.Location = new Point(73, 173);
+            btAgregar.Name = "btAgregar";
+            btAgregar.Size = new Size(75, 23);
+            btAgregar.TabIndex = 6;
+            btAgregar.Text = "Agregar";
+            btAgregar.UseVisualStyleBackColor = true;
+            btAgregar.Click += btAgregar_Click;
             // 
-            // button3
+            // btGuardar
             // 
-            button3.Location = new Point(205, 173);
-            button3.Name = "button3";
-            button3.Size = new Size(75, 23);
-            button3.TabIndex = 7;
-            button3.Text = "Guardar";
-            button3.UseVisualStyleBackColor = true;
+            btGuardar.Location = new Point(198, 173);
+            btGuardar.Name = "btGuardar";
+            btGuardar.Size = new Size(75, 23);
+            btGuardar.TabIndex = 7;
+            btGuardar.Text = "Guardar";
+            btGuardar.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // btEliminar
             // 
-            button4.Location = new Point(325, 173);
-            button4.Name = "button4";
-            button4.Size = new Size(75, 23);
-            button4.TabIndex = 8;
-            button4.Text = "Eliminar";
-            button4.UseVisualStyleBackColor = true;
+            btEliminar.Location = new Point(325, 173);
+            btEliminar.Name = "btEliminar";
+            btEliminar.Size = new Size(75, 23);
+            btEliminar.TabIndex = 8;
+            btEliminar.Text = "Eliminar";
+            btEliminar.UseVisualStyleBackColor = true;
             // 
             // panel1
             // 
             panel1.BackColor = Color.PapayaWhip;
             panel1.Controls.Add(label4);
-            panel1.Controls.Add(textBox2);
-            panel1.Controls.Add(button2);
+            panel1.Controls.Add(tbNombre);
+            panel1.Controls.Add(btAgregar);
             panel1.Controls.Add(label2);
-            panel1.Controls.Add(textBox1);
-            panel1.Controls.Add(button1);
-            panel1.Controls.Add(button4);
+            panel1.Controls.Add(tbId);
+            panel1.Controls.Add(btBuscar);
+            panel1.Controls.Add(btEliminar);
             panel1.Controls.Add(label3);
-            panel1.Controls.Add(comboBox1);
-            panel1.Controls.Add(button3);
+            panel1.Controls.Add(cbCategoria);
+            panel1.Controls.Add(btGuardar);
             panel1.Location = new Point(12, 62);
             panel1.Name = "panel1";
             panel1.Size = new Size(460, 252);
@@ -148,18 +152,18 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.Location = new Point(127, 34);
+            label4.Location = new Point(118, 35);
             label4.Name = "label4";
             label4.Size = new Size(30, 21);
             label4.TabIndex = 9;
             label4.Text = "ID:";
             // 
-            // textBox2
+            // tbNombre
             // 
-            textBox2.Location = new Point(175, 36);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(121, 23);
-            textBox2.TabIndex = 10;
+            tbNombre.Location = new Point(154, 75);
+            tbNombre.Name = "tbNombre";
+            tbNombre.Size = new Size(159, 23);
+            tbNombre.TabIndex = 10;
             // 
             // AdministracionForm
             // 
@@ -171,7 +175,7 @@
             Controls.Add(label1);
             Name = "AdministracionForm";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "AdministracionForm";
+            Text = "Administracion";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ResumeLayout(false);
@@ -182,15 +186,15 @@
 
         private Label label1;
         private Label label2;
-        private ComboBox comboBox1;
+        private ComboBox cbCategoria;
         private Label label3;
-        private TextBox textBox1;
-        private Button button1;
-        private Button button2;
-        private Button button3;
-        private Button button4;
+        private TextBox tbId;
+        private Button btBuscar;
+        private Button btAgregar;
+        private Button btGuardar;
+        private Button btEliminar;
         private Panel panel1;
         private Label label4;
-        private TextBox textBox2;
+        private TextBox tbNombre;
     }
 }

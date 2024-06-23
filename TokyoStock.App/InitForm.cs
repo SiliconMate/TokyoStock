@@ -42,13 +42,7 @@ namespace TokyoStock.App
             var usuario = tbUsuarioRegistro.Text;
             var pass = tbContraRegistro.Text;
             usuarioBusiness.RegistrarUsuario(usuario, pass);
-           
-            
-                MessageBox.Show("Usuario registrado correctamente");
-            
-           
-                MessageBox.Show("Error al registrar usuario");
-            
+            MessageBox.Show("Usuario registrado correctamente");
         }
 
         private void tbUsuarioIngreso_Enter(object sender, EventArgs e)
