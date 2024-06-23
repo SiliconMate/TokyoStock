@@ -38,7 +38,7 @@ namespace TokyoStock.App
 
             List<Venta> ventas = ventaBusiness.GetVentasWithProducts();
       
-            var productosMasVendidosCompleto = ventas.GroupBy(v => v.ProductoId)
+            var productosMasVendidos = ventas.GroupBy(v => v.ProductoId)
                 .Select(g => new
                 {
                     ProductoNombre = productoBusiness.GetProducto(g.First().ProductoId).Nombre,
@@ -50,7 +50,7 @@ namespace TokyoStock.App
                 .ToList();
 
             dgvVendido.AutoGenerateColumns = false;
-            dgvVendido.DataSource = productosMasVendidosCompleto;
+            dgvVendido.DataSource = productosMasVendidos;
 
             dgvVendido.Columns["ProductoNombre"].DataPropertyName = "ProductoNombre";
             dgvVendido.Columns["CategoriaNombre"].DataPropertyName = "CategoriaNombre";

@@ -12,8 +12,15 @@ namespace TokyoStock.App
     {
         private static ProductoRepository productoRepository = new ProductoRepository();
         private static ProductoBusiness productoBusiness = new ProductoBusiness(productoRepository);
+        
         private static CategoriaRepository categoriaRepository = new CategoriaRepository();
         private static CategoriaBusiness categoriaBusiness = new CategoriaBusiness(categoriaRepository);
+
+        private static CompraRepository compraRepository = new CompraRepository();
+        private static CompraBusiness compraBusiness = new CompraBusiness(compraRepository);
+
+        private static VentaRepository ventaRepository = new VentaRepository();
+        private static VentaBusiness ventaBusiness = new VentaBusiness(ventaRepository);
 
         public static bool _isLogged = false;
 
@@ -35,6 +42,7 @@ namespace TokyoStock.App
             dataGridView1.Columns.Add("ProductoId", "ID");
             dataGridView1.Columns.Add("Nombre", "Nombre");
             dataGridView1.Columns.Add("CategoriaNombre", "Categoria");
+            dataGridView1.Columns.Add("Cantidad", "Stock");
             DataGridViewCheckBoxColumn habilitadoColumn = new DataGridViewCheckBoxColumn
             {
                 Name = "Habilitado",
@@ -54,12 +62,18 @@ namespace TokyoStock.App
             var result = productoBusiness.GetProductosByFilter(filter);
             totalRecords = result.total;
 
+            var ventas = ventaBusiness.GetVentas();
+            var compras = compraBusiness.GetCompras();
+
             var ds = result.list.Select(p => new
             {
                 p.ProductoId,
                 p.Nombre,
                 CategoriaNombre = p.Categoria.Nombre,
-                p.Habilitado
+                p.Habilitado,
+                cantidad = compras.Where(c => c.ProductoId == p.ProductoId)
+                                .Sum(c => c.Cantidad) - ventas.Where(v => v.ProductoId == p.ProductoId)
+                                .Sum(v => v.Cantidad)
             }).ToList(); 
 
 
@@ -73,7 +87,8 @@ namespace TokyoStock.App
             dataGridView1.Columns["ProductoId"].DataPropertyName = "ProductoId";
             dataGridView1.Columns["Nombre"].DataPropertyName = "Nombre";
             dataGridView1.Columns["CategoriaNombre"].DataPropertyName = "CategoriaNombre";
-            
+            dataGridView1.Columns["Cantidad"].DataPropertyName = "cantidad";
+
             var categorias = categoriaBusiness.getCategorias();
             comboBox1.DataSource = categorias;
             comboBox1.DisplayMember = "Nombre";
