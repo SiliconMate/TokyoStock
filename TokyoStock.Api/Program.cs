@@ -10,6 +10,15 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddScoped<VentaRepository>();
+builder.Services.AddScoped<VentaBusiness>();
+builder.Services.AddScoped<CompraRepository>();
+builder.Services.AddScoped<CompraBusiness>();
+builder.Services.AddScoped<UsuarioRepository>();
+builder.Services.AddScoped<UsuarioBusiness>();
+builder.Services.AddScoped<ProductoRepository>();
+builder.Services.AddScoped<ProductoBusiness>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
