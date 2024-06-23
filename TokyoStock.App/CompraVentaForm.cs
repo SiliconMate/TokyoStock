@@ -43,7 +43,6 @@ namespace TokyoStock.App
 
             dgvCompra.Columns.Clear();
 
-            //dgvCompra.Columns.Add("CompraId", "ID");
             dgvCompra.Columns.Add("Fecha", "Fecha");
             dgvCompra.Columns.Add("ProductoNombre", "Producto");
             dgvCompra.Columns.Add("Cantidad", "Cantidad");
@@ -61,7 +60,6 @@ namespace TokyoStock.App
 
             var ds = result.list.Select(p => new
             {
-                //p.CompraId,
                 p.Fecha,
                 ProductoNombre = p.Producto.Nombre,
                 p.Cantidad,
@@ -75,7 +73,6 @@ namespace TokyoStock.App
             btAnteriorC.Enabled = currentPageIndex > 1;
             btSiguienteC.Enabled = currentPageIndex < (int)Math.Ceiling((double)totalRecords / pageSize);
 
-            //dgvCompra.Columns["CompraId"].DataPropertyName = "CompraId";
             dgvCompra.Columns["Fecha"].DataPropertyName = "Fecha";
             dgvCompra.Columns["ProductoNombre"].DataPropertyName = "ProductoNombre";
             dgvCompra.Columns["Cantidad"].DataPropertyName = "Cantidad";
@@ -87,7 +84,6 @@ namespace TokyoStock.App
         {
             dgvVenta.Columns.Clear();
 
-            //dgvVenta.Columns.Add("VentaId", "ID");
             dgvVenta.Columns.Add("Fecha", "Fecha");
             dgvVenta.Columns.Add("ProductoNombre", "Producto");
             dgvVenta.Columns.Add("Cantidad", "Cantidad");
@@ -104,7 +100,6 @@ namespace TokyoStock.App
 
             var ds2 = result2.list.Select(p => new
             {
-               // p.VentaId,
                 p.Fecha,
                 ProductoNombre = p.Producto.Nombre,
                 p.Cantidad,
@@ -118,12 +113,11 @@ namespace TokyoStock.App
             btAnteriorV.Enabled = currentPageIndexVenta > 1;
             btSiguienteV.Enabled = currentPageIndexVenta < (int)Math.Ceiling((double)totalRecordsVenta / pageSizeVenta);
 
-            //dgvVenta.Columns["VentaId"].DataPropertyName = "VentaId";
             dgvVenta.Columns["Fecha"].DataPropertyName = "Fecha";
             dgvVenta.Columns["ProductoNombre"].DataPropertyName = "ProductoNombre";
             dgvVenta.Columns["Cantidad"].DataPropertyName = "Cantidad";
             dgvVenta.Columns["UsuarioNombre"].DataPropertyName = "UsuarioNombre";
-            dgvVenta.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvVenta.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
         }
         
         private void btSiguiente_Click(object sender, EventArgs e)

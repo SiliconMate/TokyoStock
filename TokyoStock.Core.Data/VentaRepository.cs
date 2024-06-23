@@ -24,6 +24,18 @@ namespace TokyoStock.Core.Data
             return ventas;
         }
 
+        public List<Venta> GetVentasWithProducts()
+        {
+            var ventas = new List<Venta>();
+
+            using (var db = new TokyoStockContext())
+            {
+                ventas = db.Venta.Include(v => v.Producto).ToList();
+            }
+
+            return ventas;
+        }
+
         public Venta GetVenta(int id)
         {
             Venta venta = null;

@@ -171,7 +171,7 @@
             dgvVenta.Location = new Point(18, 76);
             dgvVenta.Name = "dgvVenta";
             dgvVenta.ReadOnly = true;
-            dgvVenta.Size = new Size(342, 275);
+            dgvVenta.Size = new Size(342, 292);
             dgvVenta.TabIndex = 2;
             // 
             // label2

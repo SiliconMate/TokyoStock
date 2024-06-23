@@ -26,6 +26,11 @@ namespace TokyoStock.Core.Business
         {
             return _vr.GetVentas();
         }
+        
+        public List<Venta> GetVentasWithProducts()
+        {
+            return _vr.GetVentasWithProducts();
+        }
 
         public Venta GetVenta(int id) => _vr.GetVenta(id);
 
