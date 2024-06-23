@@ -29,6 +29,11 @@ namespace TokyoStock.Core.Business
             return _pr.GetProducto(id);
         }
 
+        public Producto GetProductoByName(string name)
+        {
+            return _pr.GetProductoByName(name);
+        }
+
         public void AddProducto(Producto p)
         {
             _pr.AddProducto(p);

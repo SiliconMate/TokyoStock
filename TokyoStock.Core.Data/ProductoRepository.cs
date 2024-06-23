@@ -28,6 +28,18 @@ namespace TokyoStock.Core.Data
             return prod;
         }
 
+        public Producto GetProductoByName(string name)
+        {
+            var prod = new Producto();
+
+            using (var db = new TokyoStockContext())
+            {
+                prod = db.Productos.Include(p => p.Categoria).FirstOrDefault(p => p.Nombre == name);
+            }
+
+            return prod;
+        }
+
         public void AddProducto(Producto p)
         {
             using (var db = new TokyoStockContext())

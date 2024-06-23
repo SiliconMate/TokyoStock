@@ -80,8 +80,18 @@ namespace TokyoStock.App
                     CategoriaId = obtenerCategoria().CategoriaId,
                     Habilitado = true
                 };
+
+                //Validar que no exista un producto con el mismo nombre
+                if (productoBusiness.GetProductoByName(prod.Nombre) != null)
+                {
+                    MessageBox.Show("Ya existe un producto con ese nombre");
+                    return;
+                }
+                else
                 productoBusiness.AddProducto(prod);
-                MessageBox.Show("Producto agregado");
+                {
+                    MessageBox.Show("Producto agregado");
+                }
                 tbNombre.Text = "";
             }
             else if (tbNombre.Text != "" && tbId.Text != "")
