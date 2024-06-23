@@ -27,12 +27,12 @@ namespace TokyoStock.WebApp.Controllers
         public IActionResult Listar(int? pageNumber)
         {
             var f = new Filter { PageIndex = pageNumber ?? 1, PageSize = 5 };
-            var (compras, totalProductos) = _cb.GetComprasByFilter(f);
+            var (compras, total) = _cb.GetComprasByFilter(f);
             var viewModel = new CompraListViewModel
             {
                 Compras = compras,
                 PageIndex = f.PageIndex,
-                TotalPages = (int)Math.Ceiling(totalProductos / (double)f.PageSize)
+                TotalPages = (int)Math.Ceiling(total / (double)f.PageSize)
             };
 
             return View(viewModel);
