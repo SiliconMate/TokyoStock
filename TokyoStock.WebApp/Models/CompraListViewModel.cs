@@ -2,7 +2,7 @@
 
 namespace testPaginacion.Models
 {
-    public class ProductoListViewModel
+    public class CompraListViewModel
     {
         public List<Compra> Compras { get; set; }
         public int PageIndex { get; set; }
