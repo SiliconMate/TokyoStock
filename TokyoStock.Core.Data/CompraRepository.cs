@@ -24,14 +24,19 @@ namespace TokyoStock.Core.Data
             return list;
         }
 
-        public (List<Producto> list, int total) GetComprasByFilter(Filter f)
+        public (List<Compra> list, int total) GetComprasByFilter(Filter f)
         {
             var total = 0;
-            var list = new List<Producto>();
+            var list = new List<Compra>();
 
             using (var db = new TokyoStockContext())
             {
-                
+                total = db.Compras.Count();
+                list = db.Compras.Include(c => c.Producto)
+                    .Include(c => c.Usuario)
+                    .Skip((f.PageIndex - 1) * f.PageSize)
+                    .Take(f.PageSize)
+                    .ToList();
             }
 
             return (list, total);
