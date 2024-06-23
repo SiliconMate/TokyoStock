@@ -57,10 +57,10 @@ namespace TokyoStock.Core.Business
             _pr.UpdateProducto(p);
         }
 
-        public int CalculateStock(Producto p)
+        public int CalculateStock(int id)
         {
-            var ventasDelProducto = _vr.GetVentas().Where(v => v.ProductoId == p.ProductoId).Sum(v => v.Cantidad);
-            var comprasDelProducto = _cr.GetCompras().Where(c => c.ProductoId == p.ProductoId).Sum(c => c.Cantidad);
+            var ventasDelProducto = _vr.GetVentas().Where(v => v.ProductoId == id).Sum(v => v.Cantidad);
+            var comprasDelProducto = _cr.GetCompras().Where(c => c.ProductoId == id).Sum(c => c.Cantidad);
             
             return comprasDelProducto - ventasDelProducto;
         }
