@@ -42,8 +42,9 @@ namespace TokyoStock.Core.Business
         public void AddVenta(Venta v)
 		{
             var cantCompra = _cr.GetCompras().Where(c => c.ProductoId == v.ProductoId).Sum(c => c.Cantidad);
+            var cantVenta = _vr.GetVentas().Where(c => c.ProductoId == v.ProductoId).Sum(c => c.Cantidad);
 
-            if (cantCompra > v.Cantidad)
+            if ((cantCompra - cantVenta) > v.Cantidad - 1)
             {
                 _vr.AddVenta(v);
             }
