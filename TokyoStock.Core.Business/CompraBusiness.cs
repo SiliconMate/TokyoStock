@@ -19,6 +19,8 @@ namespace TokyoStock.Core.Business
             return _cr.GetCompras();
         }
 
+        public Compra GetCompra(int id) => _cr.GetCompra(id);
+
         public (List<Compra> list, int total) GetComprasByFilter(Filter f)
         {
             return _cr.GetComprasByFilter(f);

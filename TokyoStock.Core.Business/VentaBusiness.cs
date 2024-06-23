@@ -20,6 +20,8 @@ namespace TokyoStock.Core.Business
             return _vr.GetVentas();
         }
 
+        public Venta GetVenta(int id) => _vr.GetVenta(id);
+
         public (List<Venta> list, int total) GetVentasByFilter(Filter f)
         {
             return _vr.GetVentasByFilter(f);
