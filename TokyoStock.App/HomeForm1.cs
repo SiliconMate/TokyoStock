@@ -15,7 +15,7 @@ namespace TokyoStock.App
             InitializeComponent();
             InitControls();
         }
-        
+
         private void InitControls()
         {
 
@@ -115,6 +115,13 @@ namespace TokyoStock.App
                 ds = ds.Where(p => p.CategoriaNombre.Contains(categoria)).ToList();
             }
             dataGridView1.DataSource = ds;
+            btCancelar.Visible = true;
+        }
+
+        private void btCancelar_Click(object sender, EventArgs e)
+        {
+            tbNombre.Text = "";
+            InitControls();
         }
     }
 }
