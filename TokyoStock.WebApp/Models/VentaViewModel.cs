@@ -2,7 +2,7 @@
 
 namespace TokyoStock.WebApp.Models
 {
-    public class CompraViewModel
+    public class VentaViewModel
     {
         [Required]
         public DateTime Fecha { get; set; }
