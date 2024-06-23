@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using TokyoStock.Core.Entities;
+using TokyoStock.Core.Entities.Filters;
 
 namespace TokyoStock.Core.Data
 {
@@ -16,6 +17,25 @@ namespace TokyoStock.Core.Data
 
             return list;
         }
+
+        public (List<Producto> list, int total) GetProductosByFilter(Filter f)
+        {
+            var total = 0;
+            var list = new List<Producto>();
+
+            using (var db = new TokyoStockContext())
+            {
+                total = db.Productos.Count();
+                list = db.Productos.Include(p => p.Categoria)
+                    .Skip((f.PageIndex - 1) * f.PageSize)
+                    .Take(f.PageSize)
+                    .ToList();
+            }
+
+            return (list, total);
+        }
+
+
         public Producto GetProducto(int id)
         {
             var prod = new Producto();

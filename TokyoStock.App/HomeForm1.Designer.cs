@@ -36,13 +36,16 @@
             btLista = new Button();
             btVentas = new Button();
             pictureBox1 = new PictureBox();
+            label3 = new Label();
+            btAnterior = new Button();
+            btSiguiente = new Button();
+            btCancelar = new Button();
             dataGridView1 = new DataGridView();
             label2 = new Label();
             label1 = new Label();
             btBuscar = new Button();
             comboBox1 = new ComboBox();
             tbNombre = new TextBox();
-            btCancelar = new Button();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
@@ -70,6 +73,9 @@
             // splitContainer1.Panel2
             // 
             splitContainer1.Panel2.BackColor = Color.LightSkyBlue;
+            splitContainer1.Panel2.Controls.Add(label3);
+            splitContainer1.Panel2.Controls.Add(btAnterior);
+            splitContainer1.Panel2.Controls.Add(btSiguiente);
             splitContainer1.Panel2.Controls.Add(btCancelar);
             splitContainer1.Panel2.Controls.Add(dataGridView1);
             splitContainer1.Panel2.Controls.Add(label2);
@@ -151,7 +157,6 @@
             btVentas.TabIndex = 1;
             btVentas.Text = "Compras / Ventas";
             btVentas.UseVisualStyleBackColor = false;
-            btVentas.Visible = false;
             btVentas.Click += btVentas_Click;
             // 
             // pictureBox1
@@ -164,6 +169,47 @@
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.Location = new Point(264, 414);
+            label3.Name = "label3";
+            label3.Size = new Size(58, 21);
+            label3.TabIndex = 10;
+            label3.Text = "Pagina";
+            // 
+            // btAnterior
+            // 
+            btAnterior.Location = new Point(34, 415);
+            btAnterior.Name = "btAnterior";
+            btAnterior.Size = new Size(75, 23);
+            btAnterior.TabIndex = 9;
+            btAnterior.Text = "Anterior";
+            btAnterior.UseVisualStyleBackColor = true;
+            btAnterior.Click += btAnterior_Click;
+            // 
+            // btSiguiente
+            // 
+            btSiguiente.Location = new Point(524, 415);
+            btSiguiente.Name = "btSiguiente";
+            btSiguiente.Size = new Size(75, 23);
+            btSiguiente.TabIndex = 8;
+            btSiguiente.Text = "Siguiente";
+            btSiguiente.UseVisualStyleBackColor = true;
+            btSiguiente.Click += btSiguiente_Click;
+            // 
+            // btCancelar
+            // 
+            btCancelar.Location = new Point(544, 103);
+            btCancelar.Name = "btCancelar";
+            btCancelar.Size = new Size(75, 23);
+            btCancelar.TabIndex = 7;
+            btCancelar.Text = "Cancelar";
+            btCancelar.UseVisualStyleBackColor = true;
+            btCancelar.Visible = false;
+            btCancelar.Click += btCancelar_Click;
+            // 
             // dataGridView1
             // 
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
@@ -171,7 +217,7 @@
             dataGridView1.Location = new Point(15, 132);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
-            dataGridView1.Size = new Size(607, 306);
+            dataGridView1.Size = new Size(607, 272);
             dataGridView1.TabIndex = 6;
             dataGridView1.Visible = false;
             // 
@@ -228,17 +274,6 @@
             tbNombre.TabIndex = 1;
             tbNombre.Visible = false;
             // 
-            // btCancelar
-            // 
-            btCancelar.Location = new Point(544, 103);
-            btCancelar.Name = "btCancelar";
-            btCancelar.Size = new Size(75, 23);
-            btCancelar.TabIndex = 7;
-            btCancelar.Text = "Cancelar";
-            btCancelar.UseVisualStyleBackColor = true;
-            btCancelar.Visible = false;
-            btCancelar.Click += btCancelar_Click;
-            // 
             // HomeForm1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -274,5 +309,8 @@
         private Label label2;
         private DataGridView dataGridView1;
         private Button btCancelar;
+        private Button btAnterior;
+        private Button btSiguiente;
+        private Label label3;
     }
 }

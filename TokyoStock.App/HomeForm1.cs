@@ -1,7 +1,10 @@
 using Microsoft.IdentityModel.Tokens;
+using System.Drawing.Printing;
 using System.Windows.Forms;
 using TokyoStock.Core.Business;
 using TokyoStock.Core.Data;
+using TokyoStock.Core.Entities;
+using TokyoStock.Core.Entities.Filters;
 
 namespace TokyoStock.App
 {
@@ -9,7 +12,15 @@ namespace TokyoStock.App
     {
         private static ProductoRepository productoRepository = new ProductoRepository();
         private static ProductoBusiness productoBusiness = new ProductoBusiness(productoRepository);
+        private static CategoriaRepository categoriaRepository = new CategoriaRepository();
+        private static CategoriaBusiness categoriaBusiness = new CategoriaBusiness(categoriaRepository);
+
         public static bool _isLogged = false;
+
+        private int currentPageIndex = 1;
+        private int pageSize = 10;
+        private int totalRecords = 0;
+
         public HomeForm1()
         {
             InitializeComponent();
@@ -34,24 +45,39 @@ namespace TokyoStock.App
             };
             dataGridView1.Columns.Add(habilitadoColumn);
 
-            var ds = productoBusiness.GetProductos().Select(p => new
+            var filter = new Filter
+            {
+                PageIndex = currentPageIndex,
+                PageSize = pageSize
+            };
+
+            var result = productoBusiness.GetProductosByFilter(filter);
+            totalRecords = result.total;
+
+            var ds = result.list.Select(p => new
             {
                 p.ProductoId,
                 p.Nombre,
                 CategoriaNombre = p.Categoria.Nombre,
                 p.Habilitado
-            }).ToList();
+            }).ToList(); 
 
-            comboBox1.DataSource = ds;
-            comboBox1.DisplayMember = "CategoriaNombre";
+
             dataGridView1.AutoGenerateColumns = false;
             dataGridView1.DataSource = ds;
+
+            label3.Text = $"Pagina {currentPageIndex} de {Math.Ceiling((double)totalRecords / pageSize)}";
+            btAnterior.Enabled = currentPageIndex > 1;
+            btSiguiente.Enabled = currentPageIndex < (int)Math.Ceiling((double)totalRecords / pageSize);
 
             dataGridView1.Columns["ProductoId"].DataPropertyName = "ProductoId";
             dataGridView1.Columns["Nombre"].DataPropertyName = "Nombre";
             dataGridView1.Columns["CategoriaNombre"].DataPropertyName = "CategoriaNombre";
+            
+            var categorias = categoriaBusiness.getCategorias();
+            comboBox1.DataSource = categorias;
+            comboBox1.DisplayMember = "Nombre";
         }
-
         private void btSalir_Click(object sender, EventArgs e)
         {
             Close();
@@ -122,6 +148,24 @@ namespace TokyoStock.App
         {
             tbNombre.Text = "";
             InitControls();
+        }
+
+        private void btSiguiente_Click(object sender, EventArgs e)
+        {
+            if ((currentPageIndex * pageSize) < totalRecords)
+            {
+                currentPageIndex++;
+                InitControls();
+            }
+        }
+
+        private void btAnterior_Click(object sender, EventArgs e)
+        {
+            if (currentPageIndex > 1)
+            {
+                currentPageIndex--;
+                InitControls();
+            }
         }
     }
 }

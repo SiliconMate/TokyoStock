@@ -1,5 +1,6 @@
 ﻿using TokyoStock.Core.Entities;
 using TokyoStock.Core.Data;
+using TokyoStock.Core.Entities.Filters;
 
 namespace TokyoStock.Core.Business
 {
@@ -22,6 +23,11 @@ namespace TokyoStock.Core.Business
         public List<Producto> GetProductos()
         {
             return _pr.GetProductos();
+        }
+
+        public (List<Producto> list, int total) GetProductosByFilter(Filter f)
+        {
+            return _pr.GetProductosByFilter(f);
         }
 
         public Producto GetProducto(int id)

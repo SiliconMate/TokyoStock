@@ -36,5 +36,18 @@ namespace TokyoStock.Core.Data
             return categoria;
             
         }
+
+        public Categoria GetCategoriaById(int id)
+        {
+            Categoria categoria = null;
+
+            using (var db = new TokyoStockContext())
+            {
+                categoria = db.Categoria.Where(c => c.CategoriaId == id).FirstOrDefault();
+            }
+
+            return categoria;
+            
+        }
     }
 }
