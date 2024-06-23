@@ -58,7 +58,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(73, 73);
+            label2.Location = new Point(99, 75);
             label2.Name = "label2";
             label2.Size = new Size(75, 21);
             label2.TabIndex = 1;
@@ -68,7 +68,7 @@
             // 
             cbCategoria.DropDownStyle = ComboBoxStyle.DropDownList;
             cbCategoria.FormattingEnabled = true;
-            cbCategoria.Location = new Point(154, 112);
+            cbCategoria.Location = new Point(180, 114);
             cbCategoria.Name = "cbCategoria";
             cbCategoria.Size = new Size(159, 23);
             cbCategoria.TabIndex = 2;
@@ -77,7 +77,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(63, 110);
+            label3.Location = new Point(89, 112);
             label3.Name = "label3";
             label3.Size = new Size(85, 21);
             label3.TabIndex = 3;
@@ -85,7 +85,7 @@
             // 
             // tbId
             // 
-            tbId.Location = new Point(154, 37);
+            tbId.Location = new Point(180, 39);
             tbId.Name = "tbId";
             tbId.Size = new Size(59, 23);
             tbId.TabIndex = 4;
@@ -94,7 +94,7 @@
             // btBuscar
             // 
             btBuscar.BackColor = Color.FromArgb(224, 224, 224);
-            btBuscar.Location = new Point(238, 37);
+            btBuscar.Location = new Point(264, 39);
             btBuscar.Name = "btBuscar";
             btBuscar.Size = new Size(75, 23);
             btBuscar.TabIndex = 5;
@@ -104,7 +104,7 @@
             // 
             // btAgregar
             // 
-            btAgregar.Location = new Point(73, 173);
+            btAgregar.Location = new Point(99, 173);
             btAgregar.Name = "btAgregar";
             btAgregar.Size = new Size(75, 23);
             btAgregar.TabIndex = 6;
@@ -114,21 +114,25 @@
             // 
             // btGuardar
             // 
-            btGuardar.Location = new Point(198, 173);
+            btGuardar.Location = new Point(218, 173);
             btGuardar.Name = "btGuardar";
             btGuardar.Size = new Size(75, 23);
             btGuardar.TabIndex = 7;
             btGuardar.Text = "Guardar";
             btGuardar.UseVisualStyleBackColor = true;
+            btGuardar.Visible = false;
+            btGuardar.Click += btGuardar_Click;
             // 
             // btEliminar
             // 
-            btEliminar.Location = new Point(325, 173);
+            btEliminar.Location = new Point(340, 173);
             btEliminar.Name = "btEliminar";
             btEliminar.Size = new Size(75, 23);
             btEliminar.TabIndex = 8;
             btEliminar.Text = "Eliminar";
             btEliminar.UseVisualStyleBackColor = true;
+            btEliminar.Visible = false;
+            btEliminar.Click += btEliminar_Click;
             // 
             // panel1
             // 
@@ -152,7 +156,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.Location = new Point(118, 35);
+            label4.Location = new Point(144, 37);
             label4.Name = "label4";
             label4.Size = new Size(30, 21);
             label4.TabIndex = 9;
@@ -160,7 +164,7 @@
             // 
             // tbNombre
             // 
-            tbNombre.Location = new Point(154, 75);
+            tbNombre.Location = new Point(180, 77);
             tbNombre.Name = "tbNombre";
             tbNombre.Size = new Size(159, 23);
             tbNombre.TabIndex = 10;

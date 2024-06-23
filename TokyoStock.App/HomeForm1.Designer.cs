@@ -42,6 +42,7 @@
             btBuscar = new Button();
             comboBox1 = new ComboBox();
             tbNombre = new TextBox();
+            btCancelar = new Button();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
@@ -69,6 +70,7 @@
             // splitContainer1.Panel2
             // 
             splitContainer1.Panel2.BackColor = Color.LightSkyBlue;
+            splitContainer1.Panel2.Controls.Add(btCancelar);
             splitContainer1.Panel2.Controls.Add(dataGridView1);
             splitContainer1.Panel2.Controls.Add(label2);
             splitContainer1.Panel2.Controls.Add(label1);
@@ -177,7 +179,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(205, 105);
+            label2.Location = new Point(131, 105);
             label2.Name = "label2";
             label2.Size = new Size(61, 17);
             label2.TabIndex = 5;
@@ -198,7 +200,7 @@
             // 
             // btBuscar
             // 
-            btBuscar.Location = new Point(537, 103);
+            btBuscar.Location = new Point(463, 103);
             btBuscar.Name = "btBuscar";
             btBuscar.Size = new Size(75, 23);
             btBuscar.TabIndex = 3;
@@ -211,7 +213,7 @@
             // 
             comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(387, 103);
+            comboBox1.Location = new Point(313, 103);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(144, 23);
             comboBox1.TabIndex = 2;
@@ -220,11 +222,22 @@
             // tbNombre
             // 
             tbNombre.ForeColor = SystemColors.ControlText;
-            tbNombre.Location = new Point(272, 103);
+            tbNombre.Location = new Point(198, 103);
             tbNombre.Name = "tbNombre";
             tbNombre.Size = new Size(109, 23);
             tbNombre.TabIndex = 1;
             tbNombre.Visible = false;
+            // 
+            // btCancelar
+            // 
+            btCancelar.Location = new Point(544, 103);
+            btCancelar.Name = "btCancelar";
+            btCancelar.Size = new Size(75, 23);
+            btCancelar.TabIndex = 7;
+            btCancelar.Text = "Cancelar";
+            btCancelar.UseVisualStyleBackColor = true;
+            btCancelar.Visible = false;
+            btCancelar.Click += btCancelar_Click;
             // 
             // HomeForm1
             // 
@@ -260,5 +273,6 @@
         private Label label1;
         private Label label2;
         private DataGridView dataGridView1;
+        private Button btCancelar;
     }
 }

@@ -22,5 +22,10 @@ namespace TokyoStock.Core.Business
            return _cr.GetCategorias();
         }
 
+        public Categoria getCategoria(string nombre)
+        {
+            return _cr.GetCategoria(nombre);            
+        }       
+
     }
 }

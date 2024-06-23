@@ -23,5 +23,18 @@ namespace TokyoStock.Core.Data
 
             return list;
         }
+
+        public Categoria GetCategoria(string nombre)
+        {
+            Categoria categoria = null;
+
+            using (var db = new TokyoStockContext())
+            {
+                categoria = db.Categoria.Where(c => c.Nombre == nombre).FirstOrDefault();
+            }
+
+            return categoria;
+            
+        }
     }
 }
