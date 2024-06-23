@@ -24,6 +24,18 @@ namespace TokyoStock.Core.Data
             return ventas;
         }
 
+        public Venta GetVenta(int id)
+        {
+            Venta venta = null;
+
+            using (var db = new TokyoStockContext())
+            {
+                venta = db.Venta.Find(id);
+            }
+
+            return venta;
+        }
+
         public (List<Venta> list, int total) GetVentasByFilter(Filter f)
         {
             var list = new List<Venta>();

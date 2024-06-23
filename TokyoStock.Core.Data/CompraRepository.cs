@@ -24,6 +24,17 @@ namespace TokyoStock.Core.Data
             return list;
         }
 
+        public Compra GetCompra(int id) {
+            Compra compra = null;
+
+            using (var db = new TokyoStockContext())
+            {
+                compra = db.Compras.Find(id);
+            }
+
+            return compra;
+        }
+
         public (List<Compra> list, int total) GetComprasByFilter(Filter f)
         {
             var total = 0;
