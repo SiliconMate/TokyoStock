@@ -14,6 +14,6 @@ namespace TokyoStock.WebApp.Models
         public int Cantidad { get; set; }
 
         [Required]
-        public string UsuarioId { get; set; }
+        public int UsuarioId { get; set; }
     }
 }

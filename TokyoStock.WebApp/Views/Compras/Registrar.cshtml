@@ -34,15 +34,5 @@
         <label for="Cantidad">Cantidad</label>
         <input type="number" class="form-control" id="Cantidad" name="Cantidad" required>
     </div>
-    <div class="form-group">
-        <label for="UsuarioId">Usuario</label>
-        <select class="form-control" id="UsuarioId" name="UsuarioId" required>
-            <option value="">Seleccione un usuario</option>
-            @foreach (var usuario in ViewBag.Usuarios)
-            {
-                <option value="@usuario.UsuarioId">@usuario.Nombre</option>
-            }
-        </select>
-    </div>
     <button type="submit" class="btn btn-primary">Registrar</button>
 </form>

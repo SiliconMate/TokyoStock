@@ -45,13 +45,38 @@ namespace TokyoStock.WebApp.Controllers
             var productos = _pb.GetProductos();
             var usuarios = _ub.GetUsuarios();
 
-            // ViewBag.Productos = productos;
-            // ViewBag.Usuarios = usuarios;
-
             ViewData["Productos"] = productos;
             ViewData["Usuarios"] = usuarios;
 
             return View("Registrar");
+        }
+
+        [HttpPost]
+        public IActionResult Registrar(VentaViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                // Crear la venta
+                var compra = new Core.Entities.Compra
+                {
+                    Fecha = model.Fecha,
+                    ProductoId = model.ProductoId,
+                    Cantidad = model.Cantidad,
+                    UsuarioId = HttpContext.Session.GetInt32("UsuarioId").Value
+                };
+
+                _cb.AddCompra(compra);
+
+                return RedirectToAction("Listar");
+            }
+
+            var productos = _pb.GetProductos();
+            var usuarios = _ub.GetUsuarios();
+
+            ViewData["Productos"] = productos;
+            ViewData["Usuarios"] = usuarios;
+
+            return View(model);
         }
     }
 }
