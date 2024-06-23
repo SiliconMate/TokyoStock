@@ -20,10 +20,16 @@ namespace TokyoStock.Api.Controllers
         public IActionResult GetStock(int id)
         {
             var stock = _pb.CalculateStock(id);
+            var producto = _pb.GetProducto(id);
 
-            var resultado = new 
+            if (producto == null)
             {
-                Name = _pb.GetProducto(id).Nombre,
+                return Ok("Producto no encontrado");
+            }
+
+            var resultado = new
+            {
+                Name = producto.Nombre,
                 Stock = stock
             };
 
