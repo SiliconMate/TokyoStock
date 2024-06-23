@@ -7,19 +7,19 @@ namespace TokyoStock.Core.Business
     public class ProductoBusiness
     {
         private readonly ProductoRepository _pr;
-        private readonly CompraRepository _cr;
-        private readonly VentaRepository _vr;
+        private readonly CompraBusiness _cb;
+        private readonly VentaBusiness _vb;
 
         public ProductoBusiness(ProductoRepository pr)
         {
             _pr = pr;
         }
 
-        public ProductoBusiness(ProductoRepository pr, CompraRepository cr, VentaRepository vr)
+        public ProductoBusiness(ProductoRepository pr, CompraBusiness cb, VentaBusiness vb)
         {
             _pr = pr;
-            _cr = cr;
-            _vr = vr;
+            _cb = cb;
+            _vb = vb;
         }
 
         public List<Producto> GetProductos()
@@ -59,8 +59,8 @@ namespace TokyoStock.Core.Business
 
         public int CalculateStock(int id)
         {
-            var ventasDelProducto = _vr.GetVentas().Where(v => v.ProductoId == id).Sum(v => v.Cantidad);
-            var comprasDelProducto = _cr.GetCompras().Where(c => c.ProductoId == id).Sum(c => c.Cantidad);
+            var ventasDelProducto = _vb.GetVentas().Where(v => v.ProductoId == id).Sum(v => v.Cantidad);
+            var comprasDelProducto = _cb.GetCompras().Where(c => c.ProductoId == id).Sum(c => c.Cantidad);
             
             return comprasDelProducto - ventasDelProducto;
         }
