@@ -10,16 +10,18 @@ namespace TokyoStock.Core.Business
     {
         private readonly VentaRepository _vr;
         private readonly CompraRepository _cr;
+        private readonly ProductoRepository _pr;
 
         public VentaBusiness(VentaRepository vr)
         {
             _vr = vr;
         }
 
-        public VentaBusiness(VentaRepository vr, CompraRepository cr)
+        public VentaBusiness(VentaRepository vr, CompraRepository cr, ProductoRepository pr)
         {
             _vr = vr;
             _cr = cr;
+            _pr = pr;
         }
 
         public List<Venta> GetVentas()
@@ -43,9 +45,14 @@ namespace TokyoStock.Core.Business
 		{
             var cantCompra = _cr.GetCompras().Where(c => c.ProductoId == v.ProductoId).Sum(c => c.Cantidad);
             var cantVenta = _vr.GetVentas().Where(c => c.ProductoId == v.ProductoId).Sum(c => c.Cantidad);
+            var diferencia = cantCompra - cantVenta;
 
-            if ((cantCompra - cantVenta) > v.Cantidad - 1)
+            if (diferencia > v.Cantidad - 1)
             {
+                if (diferencia == v.Cantidad)
+                {
+                    _pr.DisableProducto(v.ProductoId);
+                }
                 _vr.AddVenta(v);
             }
             
