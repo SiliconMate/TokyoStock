@@ -39,14 +39,10 @@ namespace TokyoStock.App
             if (tbId.Text != "")
             {
                 btAgregar.Visible = false;
-                btGuardar.Visible = false;
-                btEliminar.Visible = false;
             }
             else
             {
                 btAgregar.Visible = true;
-                btGuardar.Visible = true;
-                btEliminar.Visible = true;
             }
         }
 
@@ -75,24 +71,65 @@ namespace TokyoStock.App
 
         private void btAgregar_Click(object sender, EventArgs e)
         {
-            if(tbNombre.Text != "" && tbId.Text == "")
+
+            if (tbNombre.Text != "" && tbId.Text == "")
             {
                 var prod = new Producto
                 {
                     Nombre = tbNombre.Text,
-                    Categoria = new Categoria { Nombre = cbCategoria.Text },
+                    CategoriaId = obtenerCategoria().CategoriaId,
                     Habilitado = true
                 };
                 productoBusiness.AddProducto(prod);
                 MessageBox.Show("Producto agregado");
+                tbNombre.Text = "";
             }
-            else if(tbNombre.Text != "" && tbId.Text != "")
+            else if (tbNombre.Text != "" && tbId.Text != "")
             {
                 MessageBox.Show("No se pueden agregar productos con ID");
             }
             else
             {
                 MessageBox.Show("Complete los campos");
+            }
+        }
+
+        private Categoria obtenerCategoria()
+        {
+            var categoria = cbCategoria.Text;
+            return categoriaBusiness.getCategoria(categoria);
+        }
+
+        private void btEliminar_Click(object sender, EventArgs e)
+        {
+            if (tbId.Text != "" && Convert.ToInt32(tbId.Text) > 0)
+            {
+                productoBusiness.DeleteProducto(Convert.ToInt32(tbId.Text));
+                MessageBox.Show("Producto eliminado");
+                tbNombre.Text = "";
+                tbId.Text = "";
+            }
+            else
+            {
+                MessageBox.Show("Ingrese un ID válido");
+            }
+        }
+
+        private void btGuardar_Click(object sender, EventArgs e)
+        {
+            if(tbId.Text != "" && Convert.ToInt32(tbId.Text) > 0)
+            {
+                var prod = productoBusiness.GetProducto(Convert.ToInt32(tbId.Text));
+                prod.Nombre = tbNombre.Text;
+                prod.CategoriaId = obtenerCategoria().CategoriaId;
+                productoBusiness.UpdateProducto(prod);
+                MessageBox.Show("Producto actualizado");
+                tbNombre.Text = "";
+                tbId.Text = "";
+            }
+            else
+            {
+                MessageBox.Show("Ingrese un ID válido");
             }
         }
     }
