@@ -7,7 +7,7 @@ namespace TokyoStock.WebApp.Permisos
 	{
 		public override void OnActionExecuting(ActionExecutingContext context)
 		{
-			if (context.HttpContext.Session.GetString("Usuario") == null)
+			if (context.HttpContext.Session.GetString("UsuarioId") == null)
 			{
 				context.Result = new RedirectResult("~/Acceso/Login");
 			}

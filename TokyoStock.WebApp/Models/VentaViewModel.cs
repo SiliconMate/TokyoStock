@@ -5,7 +5,7 @@ namespace TokyoStock.WebApp.Models
     public class VentaViewModel
     {
         [Required]
-        public DateTime Fecha { get; set; }
+        public DateTime Fecha { get; set; } = DateTime.Now;
 
         [Required]
         public int ProductoId { get; set; }
@@ -14,6 +14,6 @@ namespace TokyoStock.WebApp.Models
         public int Cantidad { get; set; }
 
         [Required]
-        public string UsuarioId { get; set; }
+        public int UsuarioId { get; set; }
     }
 }

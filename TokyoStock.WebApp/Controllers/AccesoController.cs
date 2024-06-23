@@ -42,7 +42,11 @@ namespace TokyoStock.WebApp.Controllers
             {
                 if (_ub.ValidarUsuario(um.Nombre, um.Contra))
                 {
-                    HttpContext.Session.SetString("Usuario", um.Nombre);
+                    var usuario = _ub.GetUsuarioByName(um.Nombre);
+
+                    HttpContext.Session.SetInt32("UsuarioId", usuario.UsuarioId);
+                    HttpContext.Session.SetString("UsuarioNombre", usuario.Nombre);
+
                     return RedirectToAction("Index", "Home");
                 }
             }
