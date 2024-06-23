@@ -22,7 +22,7 @@ namespace TokyoStock.Core.Business
 
         public (List<Venta> list, int total) GetVentasByFilter(Filter f)
         {
-            return GetVentasByFilter(f);
+            return _vr.GetVentasByFilter(f);
         }
     }
 }
