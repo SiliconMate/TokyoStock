@@ -3,10 +3,12 @@ using Microsoft.AspNetCore.SignalR;
 using TokyoStock.Core.Business;
 using TokyoStock.Core.Entities.Filters;
 using TokyoStock.WebApp.Models;
+using TokyoStock.WebApp.Permisos;
 
 namespace TokyoStock.WebApp.Controllers
 {
-    public class VentasController : Controller
+	[ValidarSesion]
+	public class VentasController : Controller
     {
         private readonly ProductoBusiness _pb;
         private readonly UsuarioBusiness _ub;

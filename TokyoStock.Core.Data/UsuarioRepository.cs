@@ -27,7 +27,7 @@ namespace TokyoStock.Core.Data
         {
             using (var db = new TokyoStockContext())
             {
-                return db.Usuarios.ToList().Where(u => u.Nombre == nombre).First();
+                return db.Usuarios.ToList().Where(u => u.Nombre == nombre).FirstOrDefault();
             }
         }
 

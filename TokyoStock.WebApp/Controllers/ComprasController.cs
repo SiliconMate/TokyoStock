@@ -3,10 +3,12 @@ using TokyoStock.WebApp.Models;
 using TokyoStock.Core.Business;
 using TokyoStock.Core.Entities;
 using TokyoStock.Core.Entities.Filters;
+using TokyoStock.WebApp.Permisos;
 
 namespace TokyoStock.WebApp.Controllers
 {
-    public class ComprasController : Controller
+	[ValidarSesion]
+	public class ComprasController : Controller
     {
         private readonly ProductoBusiness _pb;
         private readonly UsuarioBusiness _ub;

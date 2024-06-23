@@ -1,9 +1,11 @@
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 using TokyoStock.WebApp.Models;
+using TokyoStock.WebApp.Permisos;
 
 namespace TokyoStock.WebApp.Controllers
 {
+    [ValidarSesion]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
@@ -23,7 +25,13 @@ namespace TokyoStock.WebApp.Controllers
             return View();
         }
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+		public IActionResult CerrarSesion()
+		{
+			HttpContext.Session.Clear();
+            return RedirectToAction("Login", "Acceso");
+		}
+
+		[ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
