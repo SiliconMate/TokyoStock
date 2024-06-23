@@ -9,10 +9,12 @@ namespace TokyoStock.Core.Business
         private readonly ProductoRepository _pr;
         private readonly CompraRepository _cr;
         private readonly VentaRepository _vr;
+
         public ProductoBusiness(ProductoRepository pr)
         {
             _pr = pr;
         }
+
         public ProductoBusiness(ProductoRepository pr, CompraRepository cr, VentaRepository vr)
         {
             _pr = pr;
@@ -53,6 +55,14 @@ namespace TokyoStock.Core.Business
         public void UpdateProducto(Producto p)
         {
             _pr.UpdateProducto(p);
+        }
+
+        public int CalculateStock(Producto p)
+        {
+            var ventasDelProducto = _vr.GetVentas().Where(v => v.ProductoId == p.ProductoId).Sum(v => v.Cantidad);
+            var comprasDelProducto = _cr.GetCompras().Where(c => c.ProductoId == p.ProductoId).Sum(c => c.Cantidad);
+            
+            return comprasDelProducto - ventasDelProducto;
         }
     }
 }
