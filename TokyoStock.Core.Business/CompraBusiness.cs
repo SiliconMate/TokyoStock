@@ -21,7 +21,7 @@ namespace TokyoStock.Core.Business
 
         public (List<Compra> list, int total) GetComprasByFilter(Filter f)
         {
-            return GetComprasByFilter(f);
+            return _cr.GetComprasByFilter(f);
         }
     }
 }

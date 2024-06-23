@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using TokyoStock.WebApp.Models;
 using TokyoStock.Core.Business;
 using TokyoStock.Core.Entities;
+using TokyoStock.Core.Entities.Filters;
 
 namespace TokyoStock.WebApp.Controllers
 {
@@ -8,11 +10,13 @@ namespace TokyoStock.WebApp.Controllers
     {
         private readonly ProductoBusiness _pb;
         private readonly UsuarioBusiness _ub;
+        private readonly CompraBusiness _cb;
 
-        public ComprasController(ProductoBusiness pb, UsuarioBusiness ub)
+        public ComprasController(ProductoBusiness pb, UsuarioBusiness ub, CompraBusiness cb)
         {
             _pb = pb;
             _ub = ub;
+            _cb = cb;
         }
 
         public IActionResult Index()
@@ -20,9 +24,18 @@ namespace TokyoStock.WebApp.Controllers
             return View("Listar");
         }
 
-        public IActionResult Listar()
+        public IActionResult Listar(int? pageNumber)
         {
-            return View();
+            var f = new Filter { PageIndex = pageNumber ?? 1, PageSize = 5 };
+            var (compras, totalProductos) = _cb.GetComprasByFilter(f);
+            var viewModel = new CompraListViewModel
+            {
+                Compras = compras,
+                PageIndex = f.PageIndex,
+                TotalPages = (int)Math.Ceiling(totalProductos / (double)f.PageSize)
+            };
+
+            return View(viewModel);
         }
 
         public IActionResult Registrar()

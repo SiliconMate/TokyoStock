@@ -1,2 +1,67 @@
-﻿
-<h1>Esto es el listado del controlador Compras</h1>
+﻿@model CompraListViewModel
+
+<div class="row justify-content-center p-4">
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    Id
+                </th>
+                <th>
+                    Nombre
+                </th>
+                <th>
+                    Categoria
+                </th>
+                <th>
+                    Habilitado
+                </th>
+                <th>
+                    Usuario
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Compras)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ProductoId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Fecha)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Producto.Nombre)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Cantidad)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Usuario.Nombre)
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+</div>
+
+<div class="row justify-content-center">
+
+    <p>@Model.PageIndex / @Model.TotalPages</p>
+
+    <div class="col-2">
+        @if (Model.HasPreviousPage)
+        {
+            <a asp-action="Listar" asp-route-pageNumber="@(Model.PageIndex - 1)" class="btn btn-primary">Anterior</a>
+        }
+
+        @if (Model.HasNextPage)
+        {
+            <a asp-action="Listar" asp-route-pageNumber="@(Model.PageIndex + 1)" class="btn btn-primary">Siguiente</a>
+        }
+    </div>
+
+</div>

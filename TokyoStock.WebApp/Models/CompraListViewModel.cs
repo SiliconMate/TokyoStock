@@ -1,6 +1,6 @@
 ﻿using TokyoStock.Core.Entities;
 
-namespace testPaginacion.Models
+namespace TokyoStock.WebApp.Models
 {
     public class CompraListViewModel
     {
