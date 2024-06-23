@@ -25,5 +25,10 @@ namespace TokyoStock.Core.Business
         {
             return _cr.GetComprasByFilter(f);
         }
+
+        public void AddCompra(Compra c)
+		{
+			_cr.AddCompra(c);
+		}
     }
 }

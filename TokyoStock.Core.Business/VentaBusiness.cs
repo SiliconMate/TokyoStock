@@ -26,5 +26,10 @@ namespace TokyoStock.Core.Business
         {
             return _vr.GetVentasByFilter(f);
         }
+
+        public void AddVenta(Venta v)
+		{
+			_vr.AddVenta(v);
+		}
     }
 }
