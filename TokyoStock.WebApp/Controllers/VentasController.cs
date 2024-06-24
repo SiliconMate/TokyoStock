@@ -28,7 +28,7 @@ namespace TokyoStock.WebApp.Controllers
 
         public IActionResult Listar(int? pageNumber)
         {
-            var f = new Filter { PageIndex = pageNumber ?? 1, PageSize = 5 };
+            var f = new Filter { PageIndex = pageNumber ?? 1, PageSize = 10 };
             var (ventas, total) = _vb.GetVentasByFilter(f);
             var viewModel = new VentaListViewModel
             {
