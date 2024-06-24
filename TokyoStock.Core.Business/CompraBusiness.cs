@@ -8,10 +8,17 @@ namespace TokyoStock.Core.Business
     public class CompraBusiness
     {
         private readonly CompraRepository _cr;
+        private readonly ProductoRepository _pr;
 
         public CompraBusiness(CompraRepository cr)
         {
             _cr = cr;
+        }
+
+        public CompraBusiness(CompraRepository cr, ProductoRepository pr)
+        {
+            _cr = cr;
+            _pr = pr;
         }
 
         public List<Compra> GetCompras()
@@ -28,6 +35,7 @@ namespace TokyoStock.Core.Business
 
         public void AddCompra(Compra c)
 		{
+            _pr.EnableProducto(c.ProductoId);
 			_cr.AddCompra(c);
 		}
     }

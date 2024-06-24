@@ -91,13 +91,23 @@ namespace TokyoStock.Core.Data
             }
         }
 
-        // hace un metodo que pongan en false el campo habilitado de un producto
         public void DisableProducto(int id)
         {
             using (var db = new TokyoStockContext())
             {
                 var prod = db.Productos.FirstOrDefault(p => p.ProductoId == id);
                 prod.Habilitado = false;
+                db.Productos.Update(prod);
+                db.SaveChanges();
+            }
+        }
+
+        public void EnableProducto(int id)
+        {
+            using (var db = new TokyoStockContext())
+            {
+                var prod = db.Productos.FirstOrDefault(p => p.ProductoId == id);
+                prod.Habilitado = true;
                 db.Productos.Update(prod);
                 db.SaveChanges();
             }
