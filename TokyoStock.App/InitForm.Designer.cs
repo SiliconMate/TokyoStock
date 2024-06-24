@@ -111,6 +111,7 @@
             tbContraIngreso.ForeColor = SystemColors.ButtonShadow;
             tbContraIngreso.Location = new Point(14, 118);
             tbContraIngreso.Name = "tbContraIngreso";
+            tbContraIngreso.PasswordChar = '*';
             tbContraIngreso.RightToLeft = RightToLeft.No;
             tbContraIngreso.Size = new Size(165, 23);
             tbContraIngreso.TabIndex = 2;
@@ -182,6 +183,7 @@
             tbContraRegistro.ForeColor = SystemColors.ButtonShadow;
             tbContraRegistro.Location = new Point(14, 92);
             tbContraRegistro.Name = "tbContraRegistro";
+            tbContraRegistro.PasswordChar = '*';
             tbContraRegistro.RightToLeft = RightToLeft.No;
             tbContraRegistro.Size = new Size(165, 23);
             tbContraRegistro.TabIndex = 2;

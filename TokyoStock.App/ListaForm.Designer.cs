@@ -88,7 +88,7 @@
             Controls.Add(panel1);
             Name = "ListaForm";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "ListaForm";
+            Text = "Mas Vendidos";
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgvVendido).EndInit();

@@ -193,7 +193,7 @@
             Controls.Add(panel1);
             Name = "CompraVentaForm";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "ListasForm";
+            Text = "Compras y Ventas";
             panel1.ResumeLayout(false);
             splitContainer1.Panel1.ResumeLayout(false);
             splitContainer1.Panel1.PerformLayout();
