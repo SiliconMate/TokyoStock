@@ -129,6 +129,7 @@
             btAdministracion.TabIndex = 2;
             btAdministracion.Text = "Administracion";
             btAdministracion.UseVisualStyleBackColor = false;
+            btAdministracion.Visible = false;
             btAdministracion.Click += btAdministracion_Click;
             // 
             // btLista
@@ -142,6 +143,7 @@
             btLista.TabIndex = 5;
             btLista.Text = "Lo mas vendido";
             btLista.UseVisualStyleBackColor = false;
+            btLista.Visible = false;
             btLista.Click += btLista_Click;
             // 
             // btVentas
@@ -156,6 +158,7 @@
             btVentas.TabIndex = 1;
             btVentas.Text = "Compras / Ventas";
             btVentas.UseVisualStyleBackColor = false;
+            btVentas.Visible = false;
             btVentas.Click += btVentas_Click;
             // 
             // pictureBox1
@@ -214,14 +217,14 @@
             // 
             // dataGridView1
             // 
-            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Location = new Point(15, 132);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
-            dataGridView1.Size = new Size(607, 272);
+            dataGridView1.Size = new Size(607, 275);
             dataGridView1.TabIndex = 6;
             dataGridView1.Visible = false;
+            dataGridView1.RowPrePaint += dataGridView1_RowPrePaint;
             // 
             // label2
             // 

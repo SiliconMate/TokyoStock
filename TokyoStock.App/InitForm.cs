@@ -43,6 +43,8 @@ namespace TokyoStock.App
             var pass = tbContraRegistro.Text;
             usuarioBusiness.RegistrarUsuario(usuario, pass);
             MessageBox.Show("Usuario registrado correctamente");
+            tbContraIngreso.Text = "Contraseña";
+            tbUsuarioIngreso.Text = "Usuario";
         }
 
         private void tbUsuarioIngreso_Enter(object sender, EventArgs e)

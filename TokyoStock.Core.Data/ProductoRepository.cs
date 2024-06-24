@@ -79,11 +79,14 @@ namespace TokyoStock.Core.Data
             }
         }
 
-        public void UpdateProducto(Producto p)
+        public void UpdateProducto(Producto p)  
         {
             using (var db = new TokyoStockContext())
             {
-                db.Productos.Update(p);
+                var query = db.Productos.FirstOrDefault(pr => pr.ProductoId == p.ProductoId);
+                query.Nombre = p.Nombre;
+                query.CategoriaId = p.CategoriaId;
+                db.Productos.Update(query);
                 db.SaveChanges();
             }
         }

@@ -78,7 +78,7 @@ namespace TokyoStock.App
                 {
                     Nombre = tbNombre.Text,
                     CategoriaId = obtenerCategoria().CategoriaId,
-                    Habilitado = true
+                    Habilitado = false
                 };
 
                 //Validar que no exista un producto con el mismo nombre
@@ -131,11 +131,19 @@ namespace TokyoStock.App
             {
                 var prod = productoBusiness.GetProducto(Convert.ToInt32(tbId.Text));
                 prod.Nombre = tbNombre.Text;
-                prod.CategoriaId = obtenerCategoria().CategoriaId;
-                productoBusiness.UpdateProducto(prod);
-                MessageBox.Show("Producto actualizado");
-                tbNombre.Text = "";
-                tbId.Text = "";
+                prod.CategoriaId = obtenerCategoria().CategoriaId;           
+                if(productoBusiness.GetProductoByName(prod.Nombre) != null)
+                {
+                    MessageBox.Show("Ya existe un producto con ese nombre");
+                    return;
+                }
+                else
+                {
+                    productoBusiness.UpdateProducto(prod);
+                    MessageBox.Show("Producto actualizado");
+                    tbNombre.Text = "";
+                    tbId.Text = "";
+                }           
             }
             else
             {

@@ -55,7 +55,7 @@
             panel1.Controls.Add(splitContainer1);
             panel1.Location = new Point(25, 25);
             panel1.Name = "panel1";
-            panel1.Size = new Size(743, 413);
+            panel1.Size = new Size(754, 413);
             panel1.TabIndex = 0;
             // 
             // splitContainer1
@@ -82,8 +82,8 @@
             splitContainer1.Panel2.Controls.Add(btAnteriorV);
             splitContainer1.Panel2.Controls.Add(dgvVenta);
             splitContainer1.Panel2.Controls.Add(label2);
-            splitContainer1.Size = new Size(743, 413);
-            splitContainer1.SplitterDistance = 364;
+            splitContainer1.Size = new Size(754, 413);
+            splitContainer1.SplitterDistance = 369;
             splitContainer1.TabIndex = 0;
             // 
             // label3
@@ -139,7 +139,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.Location = new Point(131, 376);
+            label4.Location = new Point(131, 378);
             label4.Name = "label4";
             label4.Size = new Size(58, 21);
             label4.TabIndex = 5;
@@ -147,7 +147,7 @@
             // 
             // btSiguienteV
             // 
-            btSiguienteV.Location = new Point(285, 376);
+            btSiguienteV.Location = new Point(292, 378);
             btSiguienteV.Name = "btSiguienteV";
             btSiguienteV.Size = new Size(75, 23);
             btSiguienteV.TabIndex = 4;
@@ -157,7 +157,7 @@
             // 
             // btAnteriorV
             // 
-            btAnteriorV.Location = new Point(18, 376);
+            btAnteriorV.Location = new Point(18, 379);
             btAnteriorV.Name = "btAnteriorV";
             btAnteriorV.Size = new Size(75, 23);
             btAnteriorV.TabIndex = 3;
@@ -171,7 +171,7 @@
             dgvVenta.Location = new Point(18, 76);
             dgvVenta.Name = "dgvVenta";
             dgvVenta.ReadOnly = true;
-            dgvVenta.Size = new Size(342, 292);
+            dgvVenta.Size = new Size(349, 275);
             dgvVenta.TabIndex = 2;
             // 
             // label2

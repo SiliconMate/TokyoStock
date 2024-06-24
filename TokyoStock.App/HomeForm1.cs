@@ -88,6 +88,7 @@ namespace TokyoStock.App
             dataGridView1.Columns["Nombre"].DataPropertyName = "Nombre";
             dataGridView1.Columns["CategoriaNombre"].DataPropertyName = "CategoriaNombre";
             dataGridView1.Columns["Cantidad"].DataPropertyName = "cantidad";
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
             var categorias = categoriaBusiness.getCategorias();
             comboBox1.DataSource = categorias;
@@ -119,11 +120,11 @@ namespace TokyoStock.App
             }
         }
 
-
         private void btAdministracion_Click(object sender, EventArgs e)
         {
             var adminForm = new AdministracionForm();
             adminForm.ShowDialog();
+            InitControls();
         }
 
         private void btLista_Click(object sender, EventArgs e)
@@ -143,23 +144,44 @@ namespace TokyoStock.App
         {
             string nombre = tbNombre.Text.ToLower();
             string categoria = comboBox1.Text;
-            var ds = productoBusiness.GetProductos().Select(p => new
+
+            var filter = new Filter
+            {
+                PageIndex = currentPageIndex,
+                PageSize = pageSize
+            };
+
+            var ventas = ventaBusiness.GetVentas();
+            var compras = compraBusiness.GetCompras();
+
+            var result = productoBusiness.GetProductosByFilter(filter);
+
+            var ds = result.list.Select(p => new
             {
                 p.ProductoId,
                 p.Nombre,
                 CategoriaNombre = p.Categoria.Nombre,
-                p.Habilitado
+                p.Habilitado,
+                cantidad = compras.Where(c => c.ProductoId == p.ProductoId)
+                               .Sum(c => c.Cantidad) - ventas.Where(v => v.ProductoId == p.ProductoId)
+                               .Sum(v => v.Cantidad)
             }).ToList();
 
             if (!nombre.IsNullOrEmpty())
             {
                 ds = ds.Where(p => p.Nombre.ToLower().StartsWith(nombre) && p.CategoriaNombre.Contains(categoria)).ToList();
+                totalRecords = ds.Count();
             }
             else if (nombre.IsNullOrEmpty())
             {
                 ds = ds.Where(p => p.CategoriaNombre.Contains(categoria)).ToList();
+                totalRecords = ds.Count();
             }
             dataGridView1.DataSource = ds;
+            label3.Text = $"Pagina {currentPageIndex} de {Math.Ceiling((double)(totalRecords > 0 ? totalRecords : 1) / pageSize)}";
+            btAnterior.Enabled = currentPageIndex > 1;
+            btSiguiente.Enabled = currentPageIndex < (int)Math.Ceiling((double)(totalRecords > 0 ? totalRecords : 1) / pageSize);
+
             btCancelar.Visible = true;
         }
 
@@ -167,6 +189,7 @@ namespace TokyoStock.App
         {
             tbNombre.Text = "";
             InitControls();
+            btCancelar.Visible = false;
         }
 
         private void btSiguiente_Click(object sender, EventArgs e)
@@ -186,5 +209,23 @@ namespace TokyoStock.App
                 InitControls();
             }
         }
+
+        private void dataGridView1_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
+        {
+            var producto = dataGridView1.Rows[e.RowIndex].DataBoundItem;
+            foreach (DataGridViewCell cell in dataGridView1.Rows[e.RowIndex].Cells)
+            {
+                if (!(bool)producto.GetType().GetProperty("Habilitado").GetValue(producto))
+                {
+                    cell.Style.BackColor = System.Drawing.Color.LightCoral;
+
+                }
+                else if((bool)producto.GetType().GetProperty("Habilitado").GetValue(producto) && cell.OwningColumn.Name == "Habilitado")
+                {
+                    cell.Style.BackColor = System.Drawing.Color.LightGreen;
+                }
+            }
+        }
+
     }
 }

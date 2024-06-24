@@ -117,7 +117,7 @@ namespace TokyoStock.App
             dgvVenta.Columns["ProductoNombre"].DataPropertyName = "ProductoNombre";
             dgvVenta.Columns["Cantidad"].DataPropertyName = "Cantidad";
             dgvVenta.Columns["UsuarioNombre"].DataPropertyName = "UsuarioNombre";
-            dgvVenta.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            dgvVenta.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
         
         private void btSiguiente_Click(object sender, EventArgs e)
