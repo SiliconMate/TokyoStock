@@ -28,6 +28,7 @@ public partial class TokyoStockContext : DbContext
     public virtual DbSet<Venta> Venta { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        // Sacar de aca la cadena de conexion y ponerla en el archivo de configuracion o usar secret manager
         => optionsBuilder.UseSqlServer("Server=tcp:tpintegrador-server.database.windows.net,1433;Initial Catalog=db-tpintegrador;Persist Security Info=False;User ID=admin-server;Password=tpIntegrador1;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
